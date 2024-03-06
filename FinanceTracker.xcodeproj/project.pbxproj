@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BF62B9881CA00C50B32 /* AppDelegate.swift */; };
 		171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BF82B9881CA00C50B32 /* SceneDelegate.swift */; };
-		171D7BFB2B9881CA00C50B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BFA2B9881CA00C50B32 /* ViewController.swift */; };
+		171D7BFB2B9881CA00C50B32 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */; };
 		171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */; };
 		171D7C032B9881CC00C50B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171D7C022B9881CC00C50B32 /* Assets.xcassets */; };
 		171D7C062B9881CC00C50B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D7C042B9881CC00C50B32 /* LaunchScreen.storyboard */; };
 		171D7C112B9881CC00C50B32 /* FinanceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C102B9881CC00C50B32 /* FinanceTrackerTests.swift */; };
 		171D7C1B2B9881CC00C50B32 /* FinanceTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C1A2B9881CC00C50B32 /* FinanceTrackerUITests.swift */; };
 		171D7C1D2B9881CC00C50B32 /* FinanceTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C1C2B9881CC00C50B32 /* FinanceTrackerUITestsLaunchTests.swift */; };
+		171D7C2F2B9883C400C50B32 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C2E2B9883C400C50B32 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		171D7BF32B9881CA00C50B32 /* FinanceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		171D7BF62B9881CA00C50B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		171D7BF82B9881CA00C50B32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		171D7BFA2B9881CA00C50B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		171D7C002B9881CA00C50B32 /* FinanceTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceTracker.xcdatamodel; sourceTree = "<group>"; };
 		171D7C022B9881CC00C50B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		171D7C052B9881CC00C50B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		171D7C162B9881CC00C50B32 /* FinanceTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		171D7C1A2B9881CC00C50B32 /* FinanceTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackerUITests.swift; sourceTree = "<group>"; };
 		171D7C1C2B9881CC00C50B32 /* FinanceTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		171D7C2E2B9883C400C50B32 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		171D7BF52B9881CA00C50B32 /* FinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				171D7C2D2B9883B500C50B32 /* Views */,
 				171D7C2C2B98822000C50B32 /* CoreData */,
 				171D7C2B2B98820900C50B32 /* Settings */,
 				171D7C292B9881DE00C50B32 /* Application */,
@@ -136,7 +139,7 @@
 		171D7C2A2B9881EF00C50B32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				171D7BFA2B9881CA00C50B32 /* ViewController.swift */,
+				171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +160,14 @@
 				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		171D7C2D2B9883B500C50B32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				171D7C2E2B9883C400C50B32 /* MenuView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171D7BFB2B9881CA00C50B32 /* ViewController.swift in Sources */,
+				171D7C2F2B9883C400C50B32 /* MenuView.swift in Sources */,
+				171D7BFB2B9881CA00C50B32 /* MenuViewController.swift in Sources */,
 				171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
 				171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */,
