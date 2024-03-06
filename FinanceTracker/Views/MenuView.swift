@@ -10,6 +10,11 @@ final class MenuView: UIView {
         return imageView
     }()
     
+    private let firstButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
     private let firatLabel: UILabel = {
         let label = UILabel()
         label.text = Words.firstLabel.rawValue
