@@ -14,7 +14,7 @@ class NetworkManager {
 }
 
 extension NetworkManager:NetworkService {
-    func fetchDataExchange(completion: @escaping (Result<ExchangeRates,Error>) -> Void) {
+    public func fetchDataExchange(completion: @escaping (Result<ExchangeRates,Error>) -> Void) {
         let request = ApiService.getRequestExchange.requset
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -27,11 +27,12 @@ extension NetworkManager:NetworkService {
                 let json = try self.decoder.decode(ExchangeRates.self, from: data)
                 completion(.success(json))
             } catch {
+                completion(.failure(error))
             }
         }.resume()
     }
     
-    func fetchDataMoney(completion: @escaping (Result<MoneyModel,Error>) -> Void) {
+    public func fetchDataMoney(completion: @escaping (Result<MoneyModel,Error>) -> Void) {
         let request = ApiService.getRequestMoney.requset
         print(request)
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -43,7 +44,7 @@ extension NetworkManager:NetworkService {
                 let json = try self.decoder.decode(MoneyModel.self, from: data)
                 completion(.success(json))
             } catch {
-                print("error")
+                completion(.failure(error))
             }
         }.resume()
     }

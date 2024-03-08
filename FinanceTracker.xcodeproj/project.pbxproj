@@ -20,11 +20,12 @@
 		171D7C332B98A9A900C50B32 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C322B98A9A900C50B32 /* NetworkErrors.swift */; };
 		171D7C352B98A9F600C50B32 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C342B98A9F600C50B32 /* NetworkManager.swift */; };
 		171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7C372B98AFAC00C50B32 /* SingleUser.swift */; };
-		17468A8A2B99ECA8002713C5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A882B99ECA8002713C5 /* User+CoreDataProperties.swift */; };
 		17468A8F2B99EDC0002713C5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A8E2B99EDC0002713C5 /* CoreDataManager.swift */; };
 		17468A942B9A0A14002713C5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A932B9A0A14002713C5 /* ApiService.swift */; };
 		17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A952B9A19A2002713C5 /* ExchangeModel.swift */; };
 		17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A972B9A19C6002713C5 /* MoneyModel.swift */; };
+		17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */; };
+		17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AA22B9B0B85002713C5 /* DataErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +63,12 @@
 		171D7C322B98A9A900C50B32 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		171D7C342B98A9F600C50B32 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		171D7C372B98AFAC00C50B32 /* SingleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUser.swift; sourceTree = "<group>"; };
-		17468A882B99ECA8002713C5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17468A8E2B99EDC0002713C5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		17468A932B9A0A14002713C5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		17468A952B9A19A2002713C5 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 		17468A972B9A19C6002713C5 /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
+		17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17468AA22B9B0B85002713C5 /* DataErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +119,10 @@
 		171D7BF52B9881CA00C50B32 /* FinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
+				17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */,
 				17468A9B2B9A44FC002713C5 /* Resources */,
 				171D7C362B98AF9500C50B32 /* Models */,
-				17468A882B99ECA8002713C5 /* User+CoreDataProperties.swift */,
-				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
 				171D7C292B9881DE00C50B32 /* Application */,
 				171D7C2B2B98820900C50B32 /* Settings */,
 				171D7C302B98A98700C50B32 /* Services */,
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				17468A8E2B99EDC0002713C5 /* CoreDataManager.swift */,
+				17468AA22B9B0B85002713C5 /* DataErrors.swift */,
 			);
 			path = StorageManager;
 			sourceTree = "<group>";
@@ -387,10 +390,11 @@
 				171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
+				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
 				17468A942B9A0A14002713C5 /* ApiService.swift in Sources */,
 				17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */,
+				17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */,
 				171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */,
-				17468A8A2B99ECA8002713C5 /* User+CoreDataProperties.swift in Sources */,
 				17468A8F2B99EDC0002713C5 /* CoreDataManager.swift in Sources */,
 				171D7C332B98A9A900C50B32 /* NetworkErrors.swift in Sources */,
 			);
