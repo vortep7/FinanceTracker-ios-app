@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCv68rZhxHbPYJSE-7FDAzsRz8WoVp9XUs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>480440561413</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Andrey.FinanceTracker</string>
+	<key>PROJECT_ID</key>
+	<string>financetracker-46485</string>
+	<key>STORAGE_BUCKET</key>
+	<string>financetracker-46485.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:480440561413:ios:db6b2b35dc8ad20c4f916c</string>
+</dict>
+</plist>

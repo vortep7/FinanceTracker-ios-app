@@ -4,6 +4,8 @@ import Foundation
 
 final class MenuView: UIView {
     
+    var onButtonAction: (() -> Void)?
+    
     //MARK: - creating UI elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -11,8 +13,12 @@ final class MenuView: UIView {
         return imageView
     }()
     
-    private let firstButton: UIButton = {
+    let buttonExit:UIButton = {
         let button = UIButton()
+        button.backgroundColor = .brown
+        button.tintColor = .orange
+        button.layer.cornerRadius = 25
+        button.setTitle("Выйти", for: .normal)
         return button
     }()
     
@@ -45,20 +51,30 @@ final class MenuView: UIView {
         ])
     }
     
-    func constraintForFirstButton() {
-        firstButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    func constraintForExitButton() {
+        buttonExit.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            firstButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 500),
-            firstButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
-            firstButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
-            firstButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60)
+            buttonExit.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            buttonExit.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -650),
+            buttonExit.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+            buttonExit.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60)
         ])
+    }
+    
+    func addButtonAction() {
+        buttonExit.addTarget(self, action: #selector(exitButtonAction), for: .touchUpInside)
+        
+    }
+    
+    @objc func exitButtonAction() {
+        onButtonAction?()
     }
     
     func costraintsForAllViews() {
         constraintForImageView()
         constraintForFirstLabel()
-        constraintForFirstButton()
+        constraintForExitButton()
     }
     
     
@@ -66,7 +82,7 @@ final class MenuView: UIView {
     func addSomeViews() {
         self.addSubview(imageView)
         self.addSubview(firstLabel)
-        self.addSubview(firstButton)
+        self.addSubview(buttonExit)
     }
     
     //MARK: - init func
@@ -74,6 +90,7 @@ final class MenuView: UIView {
         super.init(frame: frame)
         
         addSomeViews()
+        addButtonAction()
         costraintsForAllViews()
     }
     

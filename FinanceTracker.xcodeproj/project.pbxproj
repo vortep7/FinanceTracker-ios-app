@@ -26,6 +26,14 @@
 		17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A972B9A19C6002713C5 /* MoneyModel.swift */; };
 		17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */; };
 		17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AA22B9B0B85002713C5 /* DataErrors.swift */; };
+		17468AA52B9B2722002713C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17468AA42B9B2722002713C5 /* GoogleService-Info.plist */; };
+		17468AA82B9B29AD002713C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 17468AA72B9B29AD002713C5 /* FirebaseAuth */; };
+		17468AAA2B9B29AD002713C5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17468AA92B9B29AD002713C5 /* FirebaseFirestore */; };
+		17468AAC2B9B29AD002713C5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 17468AAB2B9B29AD002713C5 /* FirebaseStorage */; };
+		17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AAD2B9B399B002713C5 /* RegistrViewController.swift */; };
+		17468AB02B9B3DC2002713C5 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AAF2B9B3DC2002713C5 /* RegView.swift */; };
+		17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AB22B9B4BAB002713C5 /* AuthManager.swift */; };
+		17468AB52B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +77,11 @@
 		17468A972B9A19C6002713C5 /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
 		17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17468AA22B9B0B85002713C5 /* DataErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrors.swift; sourceTree = "<group>"; };
+		17468AA42B9B2722002713C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17468AAD2B9B399B002713C5 /* RegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewController.swift; sourceTree = "<group>"; };
+		17468AAF2B9B3DC2002713C5 /* RegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegView.swift; sourceTree = "<group>"; };
+		17468AB22B9B4BAB002713C5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17468AA82B9B29AD002713C5 /* FirebaseAuth in Frameworks */,
+				17468AAA2B9B29AD002713C5 /* FirebaseFirestore in Frameworks */,
+				17468AAC2B9B29AD002713C5 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +135,7 @@
 		171D7BF52B9881CA00C50B32 /* FinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				17468AA42B9B2722002713C5 /* GoogleService-Info.plist */,
 				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
 				17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */,
 				17468A9B2B9A44FC002713C5 /* Resources */,
@@ -162,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */,
+				17468AAD2B9B399B002713C5 /* RegistrViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				171D7C2E2B9883C400C50B32 /* MenuView.swift */,
+				17468AAF2B9B3DC2002713C5 /* RegView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +206,7 @@
 		171D7C302B98A98700C50B32 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				17468AB12B9B4B99002713C5 /* AuthService */,
 				17468A8B2B99ED88002713C5 /* StorageManager */,
 				171D7C312B98A98E00C50B32 /* NetworkService */,
 			);
@@ -249,8 +269,17 @@
 		17468A9B2B9A44FC002713C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17468AB12B9B4B99002713C5 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				17468AB22B9B4BAB002713C5 /* AuthManager.swift */,
+			);
+			path = AuthService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +298,11 @@
 			dependencies = (
 			);
 			name = FinanceTracker;
+			packageProductDependencies = (
+				17468AA72B9B29AD002713C5 /* FirebaseAuth */,
+				17468AA92B9B29AD002713C5 /* FirebaseFirestore */,
+				17468AAB2B9B29AD002713C5 /* FirebaseStorage */,
+			);
 			productName = FinanceTracker;
 			productReference = 171D7BF32B9881CA00C50B32 /* FinanceTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +375,9 @@
 				Base,
 			);
 			mainGroup = 171D7BEA2B9881CA00C50B32;
+			packageReferences = (
+				17468AA62B9B29AD002713C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 171D7BF42B9881CA00C50B32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -357,8 +394,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17468AB52B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */,
 				171D7C062B9881CC00C50B32 /* LaunchScreen.storyboard in Resources */,
 				171D7C032B9881CC00C50B32 /* Assets.xcassets in Resources */,
+				17468AA52B9B2722002713C5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,15 +423,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				171D7C2F2B9883C400C50B32 /* MenuView.swift in Sources */,
+				17468AB02B9B3DC2002713C5 /* RegView.swift in Sources */,
 				171D7BFB2B9881CA00C50B32 /* MenuViewController.swift in Sources */,
 				171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */,
 				171D7C352B98A9F600C50B32 /* NetworkManager.swift in Sources */,
 				171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
+				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
 				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
 				17468A942B9A0A14002713C5 /* ApiService.swift in Sources */,
 				17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */,
+				17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */,
 				17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */,
 				171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */,
 				17468A8F2B99EDC0002713C5 /* CoreDataManager.swift in Sources */,
@@ -733,6 +775,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17468AA62B9B29AD002713C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17468AA72B9B29AD002713C5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17468AA62B9B29AD002713C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		17468AA92B9B29AD002713C5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17468AA62B9B29AD002713C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		17468AAB2B9B29AD002713C5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17468AA62B9B29AD002713C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */ = {
