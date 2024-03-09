@@ -27,11 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
     }
-    
+
     func showAuth() {
         let controller = RegistrViewController()
         let navigationViewController = UINavigationController(rootViewController: controller)
-        
+
         let previousViewController = window?.rootViewController
         
         navigationViewController.view.alpha = 0.0

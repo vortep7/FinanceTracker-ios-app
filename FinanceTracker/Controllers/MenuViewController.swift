@@ -42,7 +42,7 @@ extension MenuViewController {
         }
     
     @objc func goButtonAction() {
-        let nextController = GeneralViewController()
+        let nextController = MainTabBarController()
         navigationController?.pushViewController(nextController, animated: true)
     }
     

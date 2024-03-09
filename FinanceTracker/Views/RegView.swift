@@ -25,6 +25,14 @@ final class RegView: UIView {
         return textField
     }()
     
+    let alert: UIAlertController = {
+        
+        let alert = UIAlertController(title: "Error", message: "Invalid username or password", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+        alert.addAction(okAction)
+        return alert
+    }()
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "secondKaif")
@@ -188,7 +196,7 @@ final class RegView: UIView {
         case false: firstLabel.text = "Entrance"
         }
     }
-    
+
     public func changeTextForButton(_ result: Bool) {
         switch result{
         case true: buttonFirst.setTitle("Do you already have an account?", for: .normal)

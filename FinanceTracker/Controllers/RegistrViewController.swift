@@ -27,14 +27,26 @@ class RegistrViewController: UIViewController {
         super.viewDidLoad()
         regView.onFirstActionForBotton = {[weak self] in self?.firstButtonAction()}
         regView.onSecondActionForBotton = {[weak self] in self?.secondButtonAction()}
-      
+        
+        AuthManager.shared.stateDidChange = { [weak self] state in
+                   if !state {
+                       self!.addd()
+                   }
+               }
     }
     
     override func loadView() {
         self.view = RegView(frame: UIScreen.main.bounds)
         self.view.backgroundColor = .systemPink
     }
-        
+    
+    private func addd() {
+        present(regView.alert, animated: true)
+    }
+
+}
+
+extension RegistrViewController {
     @objc func firstButtonAction() {
         signup = !signup
     }
@@ -49,6 +61,5 @@ class RegistrViewController: UIViewController {
             AuthManager.shared.checkUser(email, password)
         }
     }
-
+    
 }
-

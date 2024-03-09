@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171275732B9CC597008E2BA9 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171275722B9CC597008E2BA9 /* ExchangeViewController.swift */; };
+		171275752B9CCB05008E2BA9 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171275742B9CCB05008E2BA9 /* StatisticViewController.swift */; };
+		171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171275772B9CCF39008E2BA9 /* UIColorExtension.swift */; };
+		1712757A2B9CD275008E2BA9 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171275792B9CD275008E2BA9 /* StatisticView.swift */; };
+		1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1712757B2B9CD3CF008E2BA9 /* ExchangeView.swift */; };
 		171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BF62B9881CA00C50B32 /* AppDelegate.swift */; };
 		171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BF82B9881CA00C50B32 /* SceneDelegate.swift */; };
 		171D7BFB2B9881CA00C50B32 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */; };
@@ -37,6 +42,8 @@
 		17468ABA2B9C74DC002713C5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AB92B9C74DC002713C5 /* InfoViewController.swift */; };
 		17468ABC2B9C7A5D002713C5 /* abosanova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABB2B9C7A5C002713C5 /* abosanova.ttf */; };
 		17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */; };
+		17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468ABF2B9C9A5A002713C5 /* GeneralView.swift */; };
+		17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171275722B9CC597008E2BA9 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		171275742B9CCB05008E2BA9 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		171275772B9CCF39008E2BA9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		171275792B9CD275008E2BA9 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		1712757B2B9CD3CF008E2BA9 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		171D7BF32B9881CA00C50B32 /* FinanceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		171D7BF62B9881CA00C50B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		171D7BF82B9881CA00C50B32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +100,8 @@
 		17468AB92B9C74DC002713C5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		17468ABB2B9C7A5C002713C5 /* abosanova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = abosanova.ttf; sourceTree = "<group>"; };
 		17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		17468ABF2B9C9A5A002713C5 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171275712B9CC571008E2BA9 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */,
+				17468AB72B9C74A7002713C5 /* GeneralViewController.swift */,
+				171275722B9CC597008E2BA9 /* ExchangeViewController.swift */,
+				171275742B9CCB05008E2BA9 /* StatisticViewController.swift */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		171275762B9CCF25008E2BA9 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				171275772B9CCF39008E2BA9 /* UIColorExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		171D7BEA2B9881CA00C50B32 = {
 			isa = PBXGroup;
 			children = (
@@ -182,9 +215,9 @@
 		171D7C2A2B9881EF00C50B32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				171275712B9CC571008E2BA9 /* TabBarControllers */,
 				171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */,
 				17468AAD2B9B399B002713C5 /* RegistrViewController.swift */,
-				17468AB72B9C74A7002713C5 /* GeneralViewController.swift */,
 				17468AB92B9C74DC002713C5 /* InfoViewController.swift */,
 			);
 			path = Controllers;
@@ -203,8 +236,12 @@
 		171D7C2D2B9883B500C50B32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				171275762B9CCF25008E2BA9 /* extensions */,
 				171D7C2E2B9883C400C50B32 /* MenuView.swift */,
 				17468AAF2B9B3DC2002713C5 /* RegView.swift */,
+				17468ABF2B9C9A5A002713C5 /* GeneralView.swift */,
+				171275792B9CD275008E2BA9 /* StatisticView.swift */,
+				1712757B2B9CD3CF008E2BA9 /* ExchangeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -446,19 +483,26 @@
 				171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */,
 				171D7C352B98A9F600C50B32 /* NetworkManager.swift in Sources */,
 				171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */,
+				171275752B9CCB05008E2BA9 /* StatisticViewController.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
 				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
 				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
+				1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */,
+				171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */,
 				17468A942B9A0A14002713C5 /* ApiService.swift in Sources */,
 				17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */,
 				17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */,
+				17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */,
 				17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */,
 				171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */,
 				17468AB82B9C74A7002713C5 /* GeneralViewController.swift in Sources */,
+				17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */,
 				17468A8F2B99EDC0002713C5 /* CoreDataManager.swift in Sources */,
+				1712757A2B9CD275008E2BA9 /* StatisticView.swift in Sources */,
 				171D7C332B98A9A900C50B32 /* NetworkErrors.swift in Sources */,
 				17468ABA2B9C74DC002713C5 /* InfoViewController.swift in Sources */,
+				171275732B9CC597008E2BA9 /* ExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
