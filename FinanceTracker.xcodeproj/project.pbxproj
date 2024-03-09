@@ -33,7 +33,10 @@
 		17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AAD2B9B399B002713C5 /* RegistrViewController.swift */; };
 		17468AB02B9B3DC2002713C5 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AAF2B9B3DC2002713C5 /* RegView.swift */; };
 		17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AB22B9B4BAB002713C5 /* AuthManager.swift */; };
-		17468AB52B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */; };
+		17468AB82B9C74A7002713C5 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AB72B9C74A7002713C5 /* GeneralViewController.swift */; };
+		17468ABA2B9C74DC002713C5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AB92B9C74DC002713C5 /* InfoViewController.swift */; };
+		17468ABC2B9C7A5D002713C5 /* abosanova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABB2B9C7A5C002713C5 /* abosanova.ttf */; };
+		17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +84,10 @@
 		17468AAD2B9B399B002713C5 /* RegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewController.swift; sourceTree = "<group>"; };
 		17468AAF2B9B3DC2002713C5 /* RegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegView.swift; sourceTree = "<group>"; };
 		17468AB22B9B4BAB002713C5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		17468AB72B9C74A7002713C5 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		17468AB92B9C74DC002713C5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		17468ABB2B9C7A5C002713C5 /* abosanova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = abosanova.ttf; sourceTree = "<group>"; };
+		17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +141,7 @@
 		171D7BF52B9881CA00C50B32 /* FinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
-				17468AA42B9B2722002713C5 /* GoogleService-Info.plist */,
-				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
-				17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */,
+				17468AB62B9C616D002713C5 /* CoreData */,
 				17468A9B2B9A44FC002713C5 /* Resources */,
 				171D7C362B98AF9500C50B32 /* Models */,
 				171D7C292B9881DE00C50B32 /* Application */,
@@ -180,6 +184,8 @@
 			children = (
 				171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */,
 				17468AAD2B9B399B002713C5 /* RegistrViewController.swift */,
+				17468AB72B9C74A7002713C5 /* GeneralViewController.swift */,
+				17468AB92B9C74DC002713C5 /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,7 +275,8 @@
 		17468A9B2B9A44FC002713C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17468AB42B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf */,
+				17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */,
+				17468ABB2B9C7A5C002713C5 /* abosanova.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -280,6 +287,16 @@
 				17468AB22B9B4BAB002713C5 /* AuthManager.swift */,
 			);
 			path = AuthService;
+			sourceTree = "<group>";
+		};
+		17468AB62B9C616D002713C5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */,
+				17468AA42B9B2722002713C5 /* GoogleService-Info.plist */,
+				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,10 +411,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17468AB52B9C5A49002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */,
 				171D7C062B9881CC00C50B32 /* LaunchScreen.storyboard in Resources */,
 				171D7C032B9881CC00C50B32 /* Assets.xcassets in Resources */,
 				17468AA52B9B2722002713C5 /* GoogleService-Info.plist in Resources */,
+				17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */,
+				17468ABC2B9C7A5D002713C5 /* abosanova.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +455,10 @@
 				17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */,
 				17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */,
 				171D7C012B9881CA00C50B32 /* FinanceTracker.xcdatamodeld in Sources */,
+				17468AB82B9C74A7002713C5 /* GeneralViewController.swift in Sources */,
 				17468A8F2B99EDC0002713C5 /* CoreDataManager.swift in Sources */,
 				171D7C332B98A9A900C50B32 /* NetworkErrors.swift in Sources */,
+				17468ABA2B9C74DC002713C5 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

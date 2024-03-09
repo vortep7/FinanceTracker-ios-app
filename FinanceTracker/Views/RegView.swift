@@ -21,12 +21,13 @@ final class RegView: UIView {
         textField.layer.shadowOpacity = 0.4
         textField.layer.shadowRadius = 4
         textField.layer.cornerRadius = 15
+        textField.placeholder = "Email"
         return textField
     }()
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "cute")
+        imageView.image = UIImage(named: "secondKaif")
         return imageView
     }()
     
@@ -51,8 +52,16 @@ final class RegView: UIView {
     let firstLabel:UILabel = {
         let label = UILabel()
         label.text = "Registration"
-        label.textColor = .green
-        label.font = .boldSystemFont(ofSize: 26)
+        label.textColor = .white
+        label.font = UIFont(name: "abosanova", size: 30)
+        return label
+    }()
+    
+    let infoLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Developed by Vortep"
+        label.textColor = .white
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
@@ -65,6 +74,8 @@ final class RegView: UIView {
         textField.layer.shadowOpacity = 0.4
         textField.layer.shadowRadius = 4
         textField.textColor = .black
+        textField.isSecureTextEntry = true
+        textField.placeholder = "Password"
         return textField
     }()
     
@@ -75,6 +86,16 @@ final class RegView: UIView {
             buttonFirst.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -300),
             buttonFirst.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             buttonFirst.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+        ])
+    }
+    
+    func constraintForFInfoLabel() {
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+//            infoLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 460),
+            infoLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
+            infoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
+            infoLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
         ])
     }
     
@@ -113,7 +134,7 @@ final class RegView: UIView {
         NSLayoutConstraint.activate([
             firstLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             firstLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -670),
-            firstLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 115),
+            firstLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             firstLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
         ])
     }
@@ -135,6 +156,7 @@ final class RegView: UIView {
         constraintForFirstButton()
         constraintForSecondButton()
         constraintForImageView()
+        constraintForFInfoLabel()
     }
     
     func addViews() {
@@ -144,6 +166,7 @@ final class RegView: UIView {
         self.addSubview(firstLabel)
         self.addSubview(buttonFirst)
         self.addSubview(buttonSecond)
+        self.addSubview(infoLabel)
     }
     
     func createTasksForButton() {

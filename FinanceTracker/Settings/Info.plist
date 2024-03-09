@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cinzel-VariableFont_wght.ttf</string>
+		<string>abosanova.ttf</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string></string>
