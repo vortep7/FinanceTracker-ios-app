@@ -44,6 +44,8 @@
 		17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */; };
 		17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468ABF2B9C9A5A002713C5 /* GeneralView.swift */; };
 		17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */; };
+		175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE05E2B9E2C310082166B /* CollectionModel.swift */; };
+		175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0602B9E2D8B0082166B /* ExchangeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		17468ABF2B9C9A5A002713C5 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		175BE05E2B9E2C310082166B /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		175BE0602B9E2D8B0082166B /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,7 @@
 				17468ABF2B9C9A5A002713C5 /* GeneralView.swift */,
 				171275792B9CD275008E2BA9 /* StatisticView.swift */,
 				1712757B2B9CD3CF008E2BA9 /* ExchangeView.swift */,
+				175BE0602B9E2D8B0082166B /* ExchangeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				171D7C372B98AFAC00C50B32 /* SingleUser.swift */,
+				175BE05E2B9E2C310082166B /* CollectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -485,12 +491,14 @@
 				171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */,
 				171275752B9CCB05008E2BA9 /* StatisticViewController.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
+				175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */,
 				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
 				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
 				1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */,
 				171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */,
 				17468A942B9A0A14002713C5 /* ApiService.swift in Sources */,
+				175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */,
 				17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */,
 				17468AAE2B9B399B002713C5 /* RegistrViewController.swift in Sources */,
 				17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */,

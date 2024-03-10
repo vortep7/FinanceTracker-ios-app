@@ -16,6 +16,7 @@ class MenuViewController: UIViewController {
         menuView.onButtonInfoAction
         = { [weak self] in self?.infoButtonAction()}
         
+        ConfigStocks.shared.requestForCollection()
     }
             
     override func loadView() {

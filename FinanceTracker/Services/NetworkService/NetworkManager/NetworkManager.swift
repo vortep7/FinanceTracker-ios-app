@@ -6,11 +6,9 @@ protocol NetworkService {
 }
 
 class NetworkManager {
-    
-    static let shared = NetworkManager()
+    public static let shared = NetworkManager()
     private init() {}
     private let decoder = JSONDecoder()
-    
 }
 
 extension NetworkManager:NetworkService {

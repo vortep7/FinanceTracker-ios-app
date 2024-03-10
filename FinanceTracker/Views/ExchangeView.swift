@@ -16,6 +16,11 @@ class ExchangeView: UIView {
         return toolbar
     }()
     
+    let collectionView: UICollectionView = {
+        let collectionView = UICollectionView()
+        return collectionView
+    }()
+    
     func constraintForImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -23,6 +28,16 @@ class ExchangeView: UIView {
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+        ])
+    }
+    
+    func constraintForCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
         ])
     }
     
@@ -40,11 +55,13 @@ class ExchangeView: UIView {
     func addSomeViews() {
         self.addSubview(imageView)
         self.addSubview(toolBar)
+        self.addSubview(collectionView)
     }
     
     func costraintsForAllViews() {
         constraintForImageView()
         constraintForToolBar()
+        constraintForCollectionView()
     }
     
     
