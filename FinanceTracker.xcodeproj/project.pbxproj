@@ -46,6 +46,7 @@
 		17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */; };
 		175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE05E2B9E2C310082166B /* CollectionModel.swift */; };
 		175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0602B9E2D8B0082166B /* ExchangeCell.swift */; };
+		175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0622B9F3CB10082166B /* HomeVIewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		175BE05E2B9E2C310082166B /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		175BE0602B9E2D8B0082166B /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
+		175BE0622B9F3CB10082166B /* HomeVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				171D7BFA2B9881CA00C50B32 /* MenuViewController.swift */,
 				17468AAD2B9B399B002713C5 /* RegistrViewController.swift */,
 				17468AB92B9C74DC002713C5 /* InfoViewController.swift */,
+				175BE0622B9F3CB10082166B /* HomeVIewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
 				1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */,
 				171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */,
+				175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */,
 				17468A942B9A0A14002713C5 /* ApiService.swift in Sources */,
 				175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */,
 				17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */,

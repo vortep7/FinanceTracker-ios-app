@@ -52,18 +52,18 @@ class ConfigStocks {
 
     func collectionSource() -> [Stocks]{
         let dataArray = [
-            Stocks(name: moneyTitleStorage!.aud, title: moneyTitle.aud.rawValue, price: String(exchangeStorage["aud"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.btc, title: moneyTitle.btc.rawValue, price: String(exchangeStorage["btc"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.cny, title: moneyTitle.cny.rawValue, price: String(exchangeStorage["cny"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.eth, title: moneyTitle.eth.rawValue, price: String(exchangeStorage["eth"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.eur, title: moneyTitle.eur.rawValue, price: String(exchangeStorage["eur"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.gbp, title: moneyTitle.gbp.rawValue, price: String(exchangeStorage["gbp"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.jpy, title: moneyTitle.jpy.rawValue, price: String(exchangeStorage["jpy"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.rub, title: moneyTitle.rub.rawValue, price: String(exchangeStorage["rub"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.sol, title: moneyTitle.sol.rawValue, price: String(exchangeStorage["sol"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.usd, title: moneyTitle.usd.rawValue, price: String(exchangeStorage["usd"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.usdt, title: moneyTitle.usdt.rawValue, price: String(exchangeStorage["usdt"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.luna, title: moneyTitle.luna.rawValue, price: String(exchangeStorage["luna"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.aud, title: moneyTitle.aud.rawValue, price: String(exchangeStorage["aud"]!), Image: UIImage(named: "aus")!),
+            Stocks(name: moneyTitleStorage!.btc, title: moneyTitle.btc.rawValue, price: String(exchangeStorage["btc"]!), Image: UIImage(named: "br")!),
+            Stocks(name: moneyTitleStorage!.cny, title: moneyTitle.cny.rawValue, price: String(exchangeStorage["cny"]!), Image: UIImage(named: "chi")!),
+            Stocks(name: moneyTitleStorage!.eth, title: moneyTitle.eth.rawValue, price: String(exchangeStorage["eth"]!), Image: UIImage(named: "oil")!),
+            Stocks(name: moneyTitleStorage!.eur, title: moneyTitle.eur.rawValue, price: String(exchangeStorage["eur"]!), Image: UIImage(named: "euro")!),
+            Stocks(name: moneyTitleStorage!.gbp, title: moneyTitle.gbp.rawValue, price: String(exchangeStorage["gbp"]!), Image: UIImage(named: "eng")!),
+            Stocks(name: moneyTitleStorage!.jpy, title: moneyTitle.jpy.rawValue, price: String(exchangeStorage["jpy"]!), Image: UIImage(named: "jpn")!),
+            Stocks(name: moneyTitleStorage!.rub, title: moneyTitle.rub.rawValue, price: String(exchangeStorage["rub"]!), Image: UIImage(named: "rus")!),
+            Stocks(name: moneyTitleStorage!.sol, title: moneyTitle.sol.rawValue, price: String(exchangeStorage["sol"]!), Image: UIImage(named: "sol")!),
+            Stocks(name: moneyTitleStorage!.usd, title: moneyTitle.usd.rawValue, price: String(exchangeStorage["usd"]!), Image: UIImage(named: "usa")!),
+            Stocks(name: moneyTitleStorage!.usdt, title: moneyTitle.usdt.rawValue, price: String(exchangeStorage["usdt"]!), Image: UIImage(named: "br")!),
+            Stocks(name: moneyTitleStorage!.luna, title: moneyTitle.luna.rawValue, price: String(exchangeStorage["luna"]!), Image: UIImage(named: "luna")!),
         ]
         self.myArray = dataArray
         return dataArray
