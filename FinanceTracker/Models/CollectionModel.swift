@@ -4,7 +4,7 @@ import Foundation
 struct Stocks {
     var name: String
     var title: String
-    var price: Float
+    var price: String
     var Image: UIImage
 }
 
@@ -19,57 +19,54 @@ class ConfigStocks {
     var firstFlag = false
     var secondFlag = false
 
-    func requestForCollection() {
-        NetworkManager.shared.fetchDataExchange { [weak self] result in
-            guard let self = self else { return }
-
+    func requestForCollection(completion: @escaping ([Stocks]?) -> Void) {
+        NetworkManager.shared.fetchDataExchange {result in
             switch result {
             case .success(let data):
                 self.exchangeStorage = data.eur
                 self.exchangeStorageDate = data.date
                 self.firstFlag = true
-                self.checkCollectionReady()
-            case .failure(let error):
-                print(error)
+                if self.firstFlag == true && self.secondFlag == true {
+                    self.collectionSource()
+                    completion(self.myArray)
+                }
+            case .failure:
+                completion(nil)
             }
         }
         
-        NetworkManager.shared.fetchDataMoney { [weak self] result in
-            guard let self = self else { return }
-
+        NetworkManager.shared.fetchDataMoney {result in
             switch result {
             case .success(let data):
                 self.moneyTitleStorage = data
                 self.secondFlag = true
-                self.checkCollectionReady()
-            case .failure(let error):
-                print(error)
+                if self.firstFlag == true && self.secondFlag == true {
+                    self.collectionSource()
+                    completion(self.myArray)
+                }
+            case .failure:
+                completion(nil)
             }
         }
     }
 
-    private func checkCollectionReady() {
-        if firstFlag && secondFlag {
-            self.collectionSource()
-        }
-    }
-    
-    func collectionSource(){
+    func collectionSource() -> [Stocks]{
         let dataArray = [
-            Stocks(name: moneyTitleStorage!.aud, title: moneyTitle.aud.rawValue, price: Float(exchangeStorage["aud"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.btc, title: moneyTitle.btc.rawValue, price: Float(exchangeStorage["btc"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.cny, title: moneyTitle.cny.rawValue, price: Float(exchangeStorage["cny"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.eth, title: moneyTitle.eth.rawValue, price: Float(exchangeStorage["eth"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.eur, title: moneyTitle.eur.rawValue, price: Float(exchangeStorage["eur"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.gbp, title: moneyTitle.gbp.rawValue, price: Float(exchangeStorage["gbp"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.jpy, title: moneyTitle.jpy.rawValue, price: Float(exchangeStorage["jpy"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.rub, title: moneyTitle.rub.rawValue, price: Float(exchangeStorage["rub"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.sol, title: moneyTitle.sol.rawValue, price: Float(exchangeStorage["sol"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.usd, title: moneyTitle.usd.rawValue, price: Float(exchangeStorage["usd"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.usdt, title: moneyTitle.usdt.rawValue, price: Float(exchangeStorage["usdt"]!), Image: UIImage(named: "btc")!),
-            Stocks(name: moneyTitleStorage!.luna, title: moneyTitle.luna.rawValue, price: Float(exchangeStorage["luna"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.aud, title: moneyTitle.aud.rawValue, price: String(exchangeStorage["aud"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.btc, title: moneyTitle.btc.rawValue, price: String(exchangeStorage["btc"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.cny, title: moneyTitle.cny.rawValue, price: String(exchangeStorage["cny"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.eth, title: moneyTitle.eth.rawValue, price: String(exchangeStorage["eth"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.eur, title: moneyTitle.eur.rawValue, price: String(exchangeStorage["eur"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.gbp, title: moneyTitle.gbp.rawValue, price: String(exchangeStorage["gbp"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.jpy, title: moneyTitle.jpy.rawValue, price: String(exchangeStorage["jpy"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.rub, title: moneyTitle.rub.rawValue, price: String(exchangeStorage["rub"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.sol, title: moneyTitle.sol.rawValue, price: String(exchangeStorage["sol"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.usd, title: moneyTitle.usd.rawValue, price: String(exchangeStorage["usd"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.usdt, title: moneyTitle.usdt.rawValue, price: String(exchangeStorage["usdt"]!), Image: UIImage(named: "btc")!),
+            Stocks(name: moneyTitleStorage!.luna, title: moneyTitle.luna.rawValue, price: String(exchangeStorage["luna"]!), Image: UIImage(named: "btc")!),
         ]
         self.myArray = dataArray
+        return dataArray
     }
 }
 

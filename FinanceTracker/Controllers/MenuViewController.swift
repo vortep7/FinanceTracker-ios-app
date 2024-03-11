@@ -4,6 +4,7 @@ import Firebase
 
 class MenuViewController: UIViewController {
     var menuView: MenuView {return self.view as! MenuView}
+    var count = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +17,12 @@ class MenuViewController: UIViewController {
         menuView.onButtonInfoAction
         = { [weak self] in self?.infoButtonAction()}
         
-        ConfigStocks.shared.requestForCollection()
     }
             
     override func loadView() {
         self.view = MenuView(frame: UIScreen.main.bounds)
-        self.view.backgroundColor = .blue
     }
+    
 }
 
 extension MenuViewController {

@@ -32,7 +32,6 @@ extension NetworkManager:NetworkService {
     
     public func fetchDataMoney(completion: @escaping (Result<MoneyModel,Error>) -> Void) {
         let request = ApiService.getRequestMoney.requset
-        print(request)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))

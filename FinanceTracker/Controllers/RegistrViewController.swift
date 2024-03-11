@@ -37,7 +37,7 @@ class RegistrViewController: UIViewController {
     
     override func loadView() {
         self.view = RegView(frame: UIScreen.main.bounds)
-        self.view.backgroundColor = .systemPink
+//        self.view.backgroundColor = .systemPink
     }
     
     private func addd() {
