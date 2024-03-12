@@ -131,8 +131,8 @@ final class MenuView: UIView {
     func constraintForGoButton() {
         goButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            goButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -190),
-            goButton.bottomAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 75),
+            goButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -175),
+            goButton.bottomAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 60),
             goButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             goButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
         ])
@@ -141,7 +141,7 @@ final class MenuView: UIView {
     func constraintForInfoButton() {
         infoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -115),
+            infoButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
             infoButton.bottomAnchor.constraint(equalTo: goButton.bottomAnchor, constant: 30),
             infoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             infoButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)

@@ -29,7 +29,6 @@
 		17468A942B9A0A14002713C5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A932B9A0A14002713C5 /* ApiService.swift */; };
 		17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A952B9A19A2002713C5 /* ExchangeModel.swift */; };
 		17468A982B9A19C6002713C5 /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A972B9A19C6002713C5 /* MoneyModel.swift */; };
-		17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */; };
 		17468AA32B9B0B85002713C5 /* DataErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AA22B9B0B85002713C5 /* DataErrors.swift */; };
 		17468AA52B9B2722002713C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17468AA42B9B2722002713C5 /* GoogleService-Info.plist */; };
 		17468AA82B9B29AD002713C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 17468AA72B9B29AD002713C5 /* FirebaseAuth */; };
@@ -45,6 +44,7 @@
 		17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468ABF2B9C9A5A002713C5 /* GeneralView.swift */; };
 		17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */; };
 		17482ADD2BA0276A0071F62D /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482ADC2BA0276A0071F62D /* Purchase.swift */; };
+		17482AEB2BA0839D0071F62D /* Request+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482AE92BA0839D0071F62D /* Request+CoreDataProperties.swift */; };
 		175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE05E2B9E2C310082166B /* CollectionModel.swift */; };
 		175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0602B9E2D8B0082166B /* ExchangeCell.swift */; };
 		175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0622B9F3CB10082166B /* HomeVIewController.swift */; };
@@ -95,7 +95,6 @@
 		17468A932B9A0A14002713C5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		17468A952B9A19A2002713C5 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 		17468A972B9A19C6002713C5 /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
-		17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17468AA22B9B0B85002713C5 /* DataErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrors.swift; sourceTree = "<group>"; };
 		17468AA42B9B2722002713C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17468AAD2B9B399B002713C5 /* RegistrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		17468ABF2B9C9A5A002713C5 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		17482ADC2BA0276A0071F62D /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		17482AE92BA0839D0071F62D /* Request+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		175BE05E2B9E2C310082166B /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		175BE0602B9E2D8B0082166B /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
 		175BE0622B9F3CB10082166B /* HomeVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewController.swift; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 		17468AB62B9C616D002713C5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				17468A9F2B9B0922002713C5 /* Report+CoreDataProperties.swift */,
+				17482AE92BA0839D0071F62D /* Request+CoreDataProperties.swift */,
 				17468AA42B9B2722002713C5 /* GoogleService-Info.plist */,
 				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
 			);
@@ -505,7 +505,6 @@
 				175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */,
 				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
-				17468AA12B9B0922002713C5 /* Report+CoreDataProperties.swift in Sources */,
 				1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */,
 				171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */,
 				175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */,
@@ -522,6 +521,7 @@
 				1712757A2B9CD275008E2BA9 /* StatisticView.swift in Sources */,
 				171D7C332B98A9A900C50B32 /* NetworkErrors.swift in Sources */,
 				17468ABA2B9C74DC002713C5 /* InfoViewController.swift in Sources */,
+				17482AEB2BA0839D0071F62D /* Request+CoreDataProperties.swift in Sources */,
 				171275732B9CC597008E2BA9 /* ExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

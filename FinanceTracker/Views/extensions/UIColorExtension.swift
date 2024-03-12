@@ -29,4 +29,12 @@ extension UIColor {
     static var tabBarColor: UIColor {
         #colorLiteral(red: 0.58417543, green: 0.7508088699, blue: 0.5082918637, alpha: 1)
     }
+    
+    static var pickerLabel: UIColor {
+        #colorLiteral(red: 0.6418807152, green: 0.8664970013, blue: 0.8592707125, alpha: 1)
+    }
+    
+    static var pickerColor: UIColor {
+        #colorLiteral(red: 0.4852836433, green: 0.552438447, blue: 0.5517313288, alpha: 0.477442053)
+    }
 }

@@ -16,38 +16,37 @@ public class CoreDataManager {
         appDelegate.persistentContainer.viewContext
     }
     
-    public func createReport(_ id: Int16,_ amount: Int32,_ reason: String, _ date: Date,_ user: String,_ kindOfPurchase:String) throws {
-        guard let entityReportDescription = NSEntityDescription.entity(forEntityName: "Report", in: context) else { throw DataErrors.entityCreationFailed}
-        let report = Report(entity: entityReportDescription, insertInto: context)
+    public func createReport(_ id: Int16,_ amount: Int64,_ reason: String,_ uid: String,_ date:Date) throws {
+        guard let entityReportDescription = NSEntityDescription.entity(forEntityName: "Request", in: context) else { throw DataErrors.entityCreationFailed}
+        let report = Request(entity: entityReportDescription, insertInto: context)
         report.id = id
         report.amount = amount
         report.reason = reason
+        report.uid = uid
         report.date = date
-        report.user = user
-        report.kindOfPurchase = kindOfPurchase
         
         appDelegate.saveContext()
     }
     
-    public func fetchAllReport() -> [Report] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Report")
+    public func fetchAllReport() -> [Request] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
         do {
-            return (try? context.fetch(fetchRequest) as? [Report]) ?? []
+            return (try? context.fetch(fetchRequest) as? [Request]) ?? []
         }
     }
     
-    public func fetchReport(_ id: Int16) throws  -> Report? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Report")
+    public func fetchReport(_ id: Int16) throws  -> Request? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
         do {
-            let reports = try? context.fetch(fetchRequest) as? [Report]
+            let reports = try? context.fetch(fetchRequest) as? [Request]
             return reports?.first(where: {$0.id == id})
         }
     }
     
     public func deleteAllReport() {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Report")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
         do {
-            let reports = try? context.fetch(fetchRequest) as? [Report]
+            let reports = try? context.fetch(fetchRequest) as? [Request]
             reports?.forEach{context.delete($0)}
             
         }
@@ -55,9 +54,9 @@ public class CoreDataManager {
     }
     
     public func deleteReport(with id: Int16) throws{
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Report")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
         do {
-            guard let reports = try? context.fetch(fetchRequest) as? [Report],
+            guard let reports = try? context.fetch(fetchRequest) as? [Request],
                     let report = reports.first(where: {$0.id == id})
             else {throw DataErrors.invalidFetchRequest}
             
@@ -65,7 +64,7 @@ public class CoreDataManager {
         }
         appDelegate.saveContext()
     }
-    
+
 }
 
 
