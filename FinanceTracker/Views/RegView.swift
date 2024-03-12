@@ -90,7 +90,7 @@ final class RegView: UIView {
     func constraintForFirstButton() {
         buttonFirst.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonFirst.topAnchor.constraint(equalTo: self.topAnchor, constant: 460),
+            buttonFirst.topAnchor.constraint(equalTo: self.topAnchor, constant: 500),
             buttonFirst.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -300),
             buttonFirst.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             buttonFirst.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
@@ -120,8 +120,8 @@ final class RegView: UIView {
     func constraintForSecondButton() {
         buttonSecond.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonSecond.topAnchor.constraint(equalTo: self.topAnchor, constant: 350),
-            buttonSecond.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -450),
+            buttonSecond.topAnchor.constraint(equalTo: self.topAnchor, constant: 370),
+            buttonSecond.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -430),
             buttonSecond.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             buttonSecond.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
         ])
@@ -130,10 +130,10 @@ final class RegView: UIView {
     func constraintForTextFirst() {
         firstTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            firstTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 150),
-            firstTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -650),
-            firstTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
-            firstTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
+            firstTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 170),
+            firstTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -670),
+            firstTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            firstTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
         ])
     }
     
@@ -142,18 +142,18 @@ final class RegView: UIView {
         NSLayoutConstraint.activate([
             firstLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             firstLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -670),
-            firstLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
-            firstLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
+            firstLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            firstLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     
     func constraintForTextSecond() {
         secondTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            secondTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),
-            secondTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -550),
-            secondTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
-            secondTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
+            secondTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 270),
+            secondTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -570),
+            secondTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            secondTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
         ])
     }
     

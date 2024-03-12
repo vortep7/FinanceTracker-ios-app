@@ -24,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.showAuth()
             } else {
                 self.showMenu()
+                let y = user!.uid
+                print(y)
             }
         }
     }

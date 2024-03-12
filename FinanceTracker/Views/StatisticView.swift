@@ -16,6 +16,15 @@ class StatisticView: UIView {
         return toolbar
     }()
     
+    private let toolbarLabel: UILabel = {
+        let label = UILabel()
+        label.text =  "History of spending"
+        label.textColor = .black
+        label.font = UIFont(name: "abosanova", size: 20)
+        label.textAlignment = .center
+        return label
+    }()
+    
     func constraintForImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -26,13 +35,22 @@ class StatisticView: UIView {
         ])
     }
     
+    func costraintsForToolBarLabel() {
+        toolbarLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            toolbarLabel.centerXAnchor.constraint(equalTo: toolBar.centerXAnchor),
+            toolbarLabel.centerYAnchor.constraint(equalTo: toolBar.centerYAnchor, constant: 30)
+        ])
+    }
+    
     func constraintForToolBar() {
         toolBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             toolBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             toolBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             toolBar.topAnchor.constraint(equalTo: self.topAnchor),
-            toolBar.heightAnchor.constraint(equalToConstant: 80)
+            toolBar.heightAnchor.constraint(equalToConstant: 95)
         ])
     }
     
@@ -40,11 +58,13 @@ class StatisticView: UIView {
     func addSomeViews() {
         self.addSubview(imageView)
         self.addSubview(toolBar)
+        self.addSubview(toolbarLabel)
     }
     
     func costraintsForAllViews() {
         constraintForImageView()
         constraintForToolBar()
+        costraintsForToolBarLabel()
     }
     
     

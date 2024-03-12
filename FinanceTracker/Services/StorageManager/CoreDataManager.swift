@@ -16,15 +16,15 @@ public class CoreDataManager {
         appDelegate.persistentContainer.viewContext
     }
     
-    public func createReport(_ id: Int16,_ amount: Int32,_ reason: String, _ date: Date) throws {
-        //create description of object
+    public func createReport(_ id: Int16,_ amount: Int32,_ reason: String, _ date: Date,_ user: String,_ kindOfPurchase:String) throws {
         guard let entityReportDescription = NSEntityDescription.entity(forEntityName: "Report", in: context) else { throw DataErrors.entityCreationFailed}
-        //create object
         let report = Report(entity: entityReportDescription, insertInto: context)
         report.id = id
         report.amount = amount
         report.reason = reason
         report.date = date
+        report.user = user
+        report.kindOfPurchase = kindOfPurchase
         
         appDelegate.saveContext()
     }

@@ -39,7 +39,7 @@ final class MenuView: UIView {
         uiSwitch.backgroundColor = .darkGray
         uiSwitch.layer.cornerRadius = 16
         uiSwitch.thumbTintColor = . systemYellow
-        uiSwitch.frame = CGRect(x: 300, y: 110, width: 70, height: 40)
+        uiSwitch.frame = CGRect(x: 300, y: 130, width: 70, height: 40)
         return uiSwitch
     }()
     
@@ -131,8 +131,8 @@ final class MenuView: UIView {
     func constraintForGoButton() {
         goButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            goButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -200),
-            goButton.bottomAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 85),
+            goButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -190),
+            goButton.bottomAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 75),
             goButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             goButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
         ])
@@ -141,7 +141,7 @@ final class MenuView: UIView {
     func constraintForInfoButton() {
         infoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -130),
+            infoButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -115),
             infoButton.bottomAnchor.constraint(equalTo: goButton.bottomAnchor, constant: 30),
             infoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             infoButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)

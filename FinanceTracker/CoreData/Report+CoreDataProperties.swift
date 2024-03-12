@@ -19,6 +19,8 @@ extension Report {
     @NSManaged public var reason: String
     @NSManaged public var id: Int16
     @NSManaged public var date: Date
+    @NSManaged public var user: String
+    @NSManaged public var kindOfPurchase: String
 
 }
 

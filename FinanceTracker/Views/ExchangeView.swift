@@ -14,7 +14,8 @@ class ExchangeView: UIView {
     
     private let toolBar: UIToolbar = {
         let toolbar = UIToolbar()
-        toolbar.backgroundColor = UIColor.mainWhite
+//        toolbar.backgroundColor = UIColor.tabBarColor
+        toolbar.barTintColor = .mainWhite
         return toolbar
     }()
     
@@ -22,14 +23,20 @@ class ExchangeView: UIView {
         let label = UILabel()
         label.text = "Exchange rate"
         label.textColor = .black
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = UIFont(name: "abosanova", size: 20)
         label.textAlignment = .center
         return label
     }()
     
     let buttonPerson: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "house.fill"), for: .normal)        
+        button.setImage(UIImage(systemName: "house.fill"), for: .normal)
+        return button
+    }()
+    
+    let buttonBook: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "info.bubble.fill"), for: .normal)
         return button
     }()
 
@@ -41,6 +48,14 @@ class ExchangeView: UIView {
         NSLayoutConstraint.activate([
             buttonPerson.centerXAnchor.constraint(equalTo: toolBar.centerXAnchor, constant: 175),
             buttonPerson.centerYAnchor.constraint(equalTo: toolBar.centerYAnchor, constant: 30)
+        ])
+    }
+    
+    func constraintForBookButton() {
+        buttonBook.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonBook.centerXAnchor.constraint(equalTo: toolBar.centerXAnchor, constant: -175),
+            buttonBook.centerYAnchor.constraint(equalTo: toolBar.centerYAnchor, constant: 30)
         ])
     }
     
@@ -79,7 +94,7 @@ class ExchangeView: UIView {
             toolBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             toolBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             toolBar.topAnchor.constraint(equalTo: self.topAnchor),
-            toolBar.heightAnchor.constraint(equalToConstant: 90)
+            toolBar.heightAnchor.constraint(equalToConstant: 95)
         ])
     }
     
@@ -90,6 +105,7 @@ class ExchangeView: UIView {
         self.addSubview(collectionView)
         self.addSubview(toolbarLabel)
         self.addSubview(buttonPerson)
+        self.addSubview(buttonBook)
     }
     
     func costraintsForAllViews() {
@@ -98,6 +114,7 @@ class ExchangeView: UIView {
         constraintForCollectionView()
         costraintsForToolBarLabel()
         constraintForPersonButton()
+        constraintForBookButton()
     }
     
     func addButtonAction() {

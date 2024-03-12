@@ -21,4 +21,12 @@ extension UIColor {
     static var specialCellLabel: UIColor {
         #colorLiteral(red: 0.550025548, green: 0.8842329545, blue: 0.6927723292, alpha: 1)
     }
+    
+    static var homeViewColor: UIColor {
+        #colorLiteral(red: 0.4190231301, green: 0.5421898711, blue: 0.7732402146, alpha: 0.8174668874)
+    }
+    
+    static var tabBarColor: UIColor {
+        #colorLiteral(red: 0.58417543, green: 0.7508088699, blue: 0.5082918637, alpha: 1)
+    }
 }

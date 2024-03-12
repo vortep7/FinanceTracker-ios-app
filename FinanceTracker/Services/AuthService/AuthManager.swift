@@ -12,10 +12,13 @@ class AuthManager {
     static let shared = AuthManager()
     private init() {}
     var state: Bool = true {
-            didSet {
-                stateDidChange?(state)
-            }
+        didSet {
+            stateDidChange?(state)
         }
+    }
+    
+    var userUID: String?
+    
     var stateDidChange: ((Bool) -> Void)?
     
     func createUser(_ email:String,_ password: String) {

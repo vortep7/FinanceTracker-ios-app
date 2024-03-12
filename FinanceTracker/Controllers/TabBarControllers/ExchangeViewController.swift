@@ -63,7 +63,6 @@ extension ExchangeViewController {
                     self.count -= 1
                     DispatchQueue.main.async {
                         self.exchangeView.collectionView.reloadData()
-
                     }
                 }
             }

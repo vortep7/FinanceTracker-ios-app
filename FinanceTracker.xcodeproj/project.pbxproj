@@ -44,9 +44,11 @@
 		17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */; };
 		17468AC02B9C9A5A002713C5 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468ABF2B9C9A5A002713C5 /* GeneralView.swift */; };
 		17468AC22B9CA0E9002713C5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */; };
+		17482ADD2BA0276A0071F62D /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482ADC2BA0276A0071F62D /* Purchase.swift */; };
 		175BE05F2B9E2C310082166B /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE05E2B9E2C310082166B /* CollectionModel.swift */; };
 		175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0602B9E2D8B0082166B /* ExchangeCell.swift */; };
 		175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0622B9F3CB10082166B /* HomeVIewController.swift */; };
+		175BE0652B9F3FB60082166B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0642B9F3FB60082166B /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +107,11 @@
 		17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		17468ABF2B9C9A5A002713C5 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		17468AC12B9CA0E9002713C5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		17482ADC2BA0276A0071F62D /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		175BE05E2B9E2C310082166B /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		175BE0602B9E2D8B0082166B /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
 		175BE0622B9F3CB10082166B /* HomeVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewController.swift; sourceTree = "<group>"; };
+		175BE0642B9F3FB60082166B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 				171275792B9CD275008E2BA9 /* StatisticView.swift */,
 				1712757B2B9CD3CF008E2BA9 /* ExchangeView.swift */,
 				175BE0602B9E2D8B0082166B /* ExchangeCell.swift */,
+				175BE0642B9F3FB60082166B /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			children = (
 				171D7C372B98AFAC00C50B32 /* SingleUser.swift */,
 				175BE05E2B9E2C310082166B /* CollectionModel.swift */,
+				17482ADC2BA0276A0071F62D /* Purchase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -489,11 +495,13 @@
 				171D7C2F2B9883C400C50B32 /* MenuView.swift in Sources */,
 				17468AB02B9B3DC2002713C5 /* RegView.swift in Sources */,
 				171D7BFB2B9881CA00C50B32 /* MenuViewController.swift in Sources */,
+				175BE0652B9F3FB60082166B /* HomeView.swift in Sources */,
 				171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */,
 				171D7C352B98A9F600C50B32 /* NetworkManager.swift in Sources */,
 				171D7C382B98AFAC00C50B32 /* SingleUser.swift in Sources */,
 				171275752B9CCB05008E2BA9 /* StatisticViewController.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
+				17482ADD2BA0276A0071F62D /* Purchase.swift in Sources */,
 				175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */,
 				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
@@ -695,6 +703,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -722,6 +731,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
