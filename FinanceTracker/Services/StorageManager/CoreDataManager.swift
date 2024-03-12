@@ -35,11 +35,37 @@ public class CoreDataManager {
         }
     }
     
-    public func fetchReport(_ id: Int16) throws  -> Request? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
+//    public func fetchReport(_ uid: String) throws  -> Request? {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
+//        do {
+//            let reports = try? context.fetch(fetchRequest) as? [Request]
+//            return reports?.first(where: {$0.uid == uid})
+//        }
+//    }
+    
+    public func newR(for uid: String) throws -> [Request] {
+        let fetchRequest: NSFetchRequest<Request> = Request.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
+        
         do {
-            let reports = try? context.fetch(fetchRequest) as? [Request]
-            return reports?.first(where: {$0.id == id})
+            guard let reports = try context.fetch(fetchRequest) as? [Request] else {
+                throw DataErrors.invalidFetchRequest
+            }
+            return reports
+        } catch {
+            throw error
+        }
+    }
+    
+    public func fetchReports(for uid: String) -> [Request] {
+        let fetchRequest: NSFetchRequest<Request> = Request.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
+        
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("Error fetching reports: \(error.localizedDescription)")
+            return []
         }
     }
     
@@ -53,11 +79,11 @@ public class CoreDataManager {
         appDelegate.saveContext()
     }
     
-    public func deleteReport(with id: Int16) throws{
+    public func deleteReport(with uid: String) throws{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
         do {
             guard let reports = try? context.fetch(fetchRequest) as? [Request],
-                    let report = reports.first(where: {$0.id == id})
+                    let report = reports.first(where: {$0.uid == uid})
             else {throw DataErrors.invalidFetchRequest}
             
             context.delete(report)

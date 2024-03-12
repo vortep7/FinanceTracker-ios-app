@@ -6,7 +6,7 @@ class StatisticView: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "newStocks")
+        imageView.image = UIImage(named: "Black")
         return imageView
     }()
     
@@ -24,6 +24,23 @@ class StatisticView: UIView {
         label.textAlignment = .center
         return label
     }()
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.layer.cornerRadius = 15
+        tableView.backgroundColor = .mainWhite
+        return tableView
+    }()
+    
+    func constraintForTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
+        ])
+    }
     
     func constraintForImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,12 +76,14 @@ class StatisticView: UIView {
         self.addSubview(imageView)
         self.addSubview(toolBar)
         self.addSubview(toolbarLabel)
+        self.addSubview(tableView)
     }
     
     func costraintsForAllViews() {
         constraintForImageView()
         constraintForToolBar()
         costraintsForToolBarLabel()
+        constraintForTableView()
     }
     
     

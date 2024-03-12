@@ -8,7 +8,7 @@ class GeneralView: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "man")
+        imageView.image = UIImage(named: "compt")
         return imageView
     }()
     
