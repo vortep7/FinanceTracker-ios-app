@@ -5,6 +5,7 @@ import Firebase
 
 class GeneralViewController: UIViewController {
     var generalView: GeneralView {return self.view as! GeneralView}
+    
     let array = SourcePurchase.shared.sourceOfPurchase()
     var currentDate = Date()
     var currentKind:String?
@@ -65,7 +66,6 @@ extension GeneralViewController {
                 print("error data")
             }
         }
-        
         generalView.animationForButton()
     }
 }

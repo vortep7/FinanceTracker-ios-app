@@ -37,16 +37,17 @@ class TableViewCell: UITableViewCell {
         self.contentView.addSubview(date)
 
         NSLayoutConstraint.activate([
-            reason.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            reason.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             reason.leadingAnchor.constraint (equalTo: contentView.leadingAnchor, constant: 8),
+            reason.bottomAnchor.constraint (equalTo: contentView.bottomAnchor, constant: -40),
             reason.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            amount.topAnchor.constraint(equalTo:reason.bottomAnchor),
+            amount.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
             amount.leadingAnchor.constraint (equalTo: contentView.leadingAnchor, constant: 8),
             amount.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             amount.bottomAnchor.constraint (equalTo: contentView.bottomAnchor, constant: -8),
             
-            date.topAnchor.constraint(equalTo:contentView.topAnchor, constant: 10),
+            date.topAnchor.constraint(equalTo:contentView.topAnchor, constant: 14),
             date.leadingAnchor.constraint (equalTo: contentView.leadingAnchor, constant: 30),
             date.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             date.bottomAnchor.constraint (equalTo: contentView.bottomAnchor, constant: -8)])

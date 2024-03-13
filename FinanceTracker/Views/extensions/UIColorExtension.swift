@@ -37,4 +37,12 @@ extension UIColor {
     static var pickerColor: UIColor {
         #colorLiteral(red: 0.4852836433, green: 0.552438447, blue: 0.5517313288, alpha: 0.477442053)
     }
+    
+    static var tableViewColor: UIColor {
+        #colorLiteral(red: 0.02635028763, green: 0.2550702336, blue: 0.07788352914, alpha: 0.6624068709)
+    }
+    
+    static var tableViewColorNew: UIColor {
+        #colorLiteral(red: 0.5190203669, green: 0.6000000238, blue: 0.5286347008, alpha: 0.8699037666)
+    }
 }

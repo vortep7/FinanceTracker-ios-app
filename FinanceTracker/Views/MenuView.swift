@@ -121,10 +121,10 @@ final class MenuView: UIView {
     func constraintForExitButton() {
         buttonExit.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonExit.topAnchor.constraint(equalTo: self.topAnchor, constant: 110),
-            buttonExit.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -700),
+            buttonExit.topAnchor.constraint(equalTo: self.topAnchor, constant: 120),
+            buttonExit.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -720),
             buttonExit.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            buttonExit.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -260)
+            buttonExit.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -280)
         ])
     }
     

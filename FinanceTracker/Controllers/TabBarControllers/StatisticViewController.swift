@@ -9,8 +9,10 @@ class StatisticViewController: UIViewController {
     override func viewDidLoad() {
         statisticView.tableView.dataSource = self
         statisticView.tableView.delegate = self
-        statisticView.tableView.register(TableViewCell.self, forCellReuseIdentifier: "\(TableViewCell.self)")
         
+        statisticView.onReloadButtonAction = {[weak self] in self?.actionForButtonReload()}
+        
+        statisticView.tableView.register(TableViewCell.self, forCellReuseIdentifier: "\(TableViewCell.self)")
         uid = Auth.auth().currentUser?.uid
         source = SourceTableView.shared.createDataArray(uid ?? "")
         
@@ -22,8 +24,18 @@ class StatisticViewController: UIViewController {
     }
 }
 
+extension StatisticViewController {
+    @objc func actionForButtonReload() {
+        uid = Auth.auth().currentUser?.uid
+        source = SourceTableView.shared.createDataArray(uid ?? "")
+        statisticView.tableView.reloadData()
+    }
+}
+
 extension StatisticViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
 }
 
 extension StatisticViewController: UITableViewDataSource {
@@ -35,9 +47,10 @@ extension StatisticViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(TableViewCell.self)", for: indexPath) as! TableViewCell
         print(source)
-        let element = source[indexPath.row]
-        
-        cell.amount.text = "Amount: \(element!.amount)"
+        let reversedArr = Array(source.reversed())
+        let element = reversedArr[indexPath.row]
+                
+        cell.amount.text = "Amount: \(element!.amount) rub"
         cell.reason.text = "Reason: \(element!.reason ?? "")"
         
         if let date = element!.date {
@@ -49,11 +62,11 @@ extension StatisticViewController: UITableViewDataSource {
             cell.date.text = "Date: N/A"
         }
         
+        cell.backgroundColor = .tableViewColorNew
+        
         return cell
     }
 }
 
 
 
-
-    
