@@ -4,7 +4,7 @@ import UIKit
 class ExchangeCell: UICollectionViewCell {
     
     //MARK: - create UI elements for cell
-    private var name: UILabel = {
+    var name: UILabel = {
         let name = UILabel()
         name.font = UIFont(name: "abosanova", size: 30)
         name.textColor = .white
