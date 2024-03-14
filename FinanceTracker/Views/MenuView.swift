@@ -3,7 +3,7 @@ import UIKit
 import Foundation
 
 final class MenuView: UIView {
-    
+    //MARK: - clousers for button action
     var onButtonExitAction: (() -> Void)?
     var onSwitchAction: (() -> Void)?
     var onButtonGoAction: (() -> Void)?

@@ -2,10 +2,12 @@
 import Foundation
 import UIKit
 
-class StatisticView: UIView {
-    
+final class StatisticView: UIView {
+    //MARK: - clousers for button action
     var onReloadButtonAction: (() ->Void)?
+    var onPersonButtonAction: (() ->Void)?
     
+    //MARK: - create UI elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Black")
@@ -35,6 +37,23 @@ class StatisticView: UIView {
         return label
     }()
     
+    let amountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .tabBarColor
+        label.font = UIFont(name: "abosanova", size: 28)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let sumsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .mainWhite
+        label.font = UIFont(name: "abosanova", size: 20)
+        label.numberOfLines = 10
+        label.textAlignment = .center
+        return label
+    }()
+    
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.layer.cornerRadius = 20
@@ -50,30 +69,66 @@ class StatisticView: UIView {
         return button
     }()
     
-    func constraintForSumLabel() {
-        sumLabel.translatesAutoresizingMaskIntoConstraints = false
+    let buttonPerson: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "ellipsis.circle"), for: .normal)
+        return button
+    }()
+    
+    
+    //MARK: - constraints for UI elements
+    func constraintForAmountLabel() {
+        amountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sumLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 140),
-            sumLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -670),
-            sumLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 70),
-            sumLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100)
+            amountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            amountLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -710),
+            amountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80)
+        ])
+    }
+    
+    func constraintSumsLabel() {
+        sumsLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sumsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 180),
+            sumsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -500),
+            sumsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+            sumsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60)
+        ])
+    }
+    
+//    func constraintForSumLabel() {
+//        sumLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            sumLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 180),
+//            sumLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -570),
+//            sumLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 70),
+//            sumLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100)
+//        ])
+//    }
+    
+    func constraintForPersonButton() {
+        buttonPerson.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonPerson.centerXAnchor.constraint(equalTo: toolBar.centerXAnchor, constant: 175),
+            buttonPerson.centerYAnchor.constraint(equalTo: toolBar.centerYAnchor, constant: 30)
         ])
     }
     
     func constraintForReloadButton() {
         reloadButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            reloadButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 140),
-            reloadButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -670),
-            reloadButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 200),
-            reloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
+            reloadButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 400),
+            reloadButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -440),
+            reloadButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 120),
+            reloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -120)
         ])
     }
     
     func constraintForTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 300),
+            tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 510),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -115),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30)
@@ -111,6 +166,7 @@ class StatisticView: UIView {
     
     func addButtonAction() {
         reloadButton.addTarget(self, action: #selector(reloadAction), for: .touchUpInside)
+        buttonPerson.addTarget(self, action: #selector(personAction), for: .touchUpInside)
     }
     
     //MARK: - add views elements
@@ -121,6 +177,9 @@ class StatisticView: UIView {
         self.addSubview(tableView)
         self.addSubview(reloadButton)
         self.addSubview(sumLabel)
+        self.addSubview(buttonPerson)
+        self.addSubview(amountLabel)
+        self.addSubview(sumsLabel)
     }
     
     func costraintsForAllViews() {
@@ -129,7 +188,10 @@ class StatisticView: UIView {
         costraintsForToolBarLabel()
         constraintForTableView()
         constraintForReloadButton()
-        constraintForSumLabel()
+//        constraintForSumLabel()
+        constraintForPersonButton()
+        constraintForAmountLabel()
+        constraintSumsLabel()
     }
     
     
@@ -147,8 +209,23 @@ class StatisticView: UIView {
     }
 }
 
+//MARK: - button action and animation
 extension StatisticView {
     @objc func reloadAction() {
         onReloadButtonAction?()
+    }
+    
+    @objc func personAction() {
+        onPersonButtonAction?()
+    }
+    
+    func animationForButton() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.reloadButton.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.reloadButton.transform = CGAffineTransform.identity
+            }
+        }
     }
 }

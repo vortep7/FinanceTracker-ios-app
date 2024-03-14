@@ -2,10 +2,11 @@
 import Foundation
 import UIKit
 
-class GeneralView: UIView {
+final class GeneralView: UIView {
     
     var onAddButtonAction: (() -> Void)?
     
+    //MARK: - create UI elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "compt")
@@ -78,14 +79,16 @@ class GeneralView: UIView {
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 0.7
         button.layer.shadowRadius = 5
-        button.setTitle("+", for: .normal) // Устанавливаем символ "+" как текст кнопки
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 40) // Устанавливаем размер шрифта
+        button.setTitle("+", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 40)
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 45 // Делаем кнопку круглой
+        button.layer.cornerRadius = 45
         button.clipsToBounds = true
         return button
     }()
     
+    
+    //MARK: - create constraints for UI elements
     func costraintsForAddButton() {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -124,8 +127,8 @@ class GeneralView: UIView {
         
         NSLayoutConstraint.activate([
             pickerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 350),
-            pickerLabel.bottomAnchor.constraint(equalTo: picker.topAnchor, constant: -20),
-            pickerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            pickerLabel.bottomAnchor.constraint(equalTo: picker.topAnchor, constant: -10),
+            pickerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 95),
             pickerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70)
         ])
     }
@@ -146,7 +149,7 @@ class GeneralView: UIView {
         
         NSLayoutConstraint.activate([
             bigLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 120),
-            bigLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -680),
+            bigLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -700),
             bigLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             bigLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70)
         ])
@@ -225,6 +228,7 @@ class GeneralView: UIView {
     }
 }
 
+//MARK: - button action and animation
 extension GeneralView {
     @objc func actionForAddButton() {
         onAddButtonAction?()

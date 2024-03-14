@@ -3,7 +3,8 @@ import UIKit
 
 class ExchangeCell: UICollectionViewCell {
     
-    var name: UILabel = {
+    //MARK: - create UI elements for cell
+    private var name: UILabel = {
         let name = UILabel()
         name.font = UIFont(name: "abosanova", size: 30)
         name.textColor = .white
@@ -38,10 +39,11 @@ class ExchangeCell: UICollectionViewCell {
     
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray // Устанавливаем цвет фона в серый
+        view.backgroundColor = .gray
         return view
     }()
     
+    //MARK: - constraints for cell elements
     func setupCell() {
         name.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(name)
@@ -95,30 +97,24 @@ class ExchangeCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-                separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor), // Задаем начальную точку слева
-                separatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor), // Задаем конечную точку справа
-                separatorView.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 30), // Сдвигаем вниз на 10 пунктов от центра по вертикали
+                separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                separatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                separatorView.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 30), 
                 separatorView.heightAnchor.constraint(equalToConstant: 2)
             ])
         
         self.title.numberOfLines = 15
-        
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
         self.layer.cornerRadius = 40
-            
     }
-    
- 
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 

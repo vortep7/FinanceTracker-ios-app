@@ -1,20 +1,27 @@
+//
+//  SettingView.swift
+//  FinanceTracker
+//
+//  Created by Андрей Петров on 13.03.2024.
+//
 
 import UIKit
 
-final class HomeView: UIView {
+class SettingView: UIView {
     
-    var onActionForExitButton: (() -> Void)?
-    
-    //MARK: - create UI elements
+    var onActionForDeleteButton: (() -> Void)?
+
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "fonn")
+        imageView.image = UIImage(named: "blackFirst")
         return imageView
     }()
     
+    var onActionForExitButton: (() -> Void)?
+    
     private let generalLabel: UILabel = {
         let label = UILabel()
-        label.text = "My Account"
+        label.text = "Table view setting"
         label.font = UIFont.boldSystemFont(ofSize: 28)
         label.textColor = UIColor.mainWhite
         return label
@@ -22,7 +29,7 @@ final class HomeView: UIView {
     
     private let settingButton:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .homeViewColor
+        button.backgroundColor = .tabBarColor
         button.tintColor = .orange
         
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -31,13 +38,13 @@ final class HomeView: UIView {
         button.layer.shadowRadius = 5
         
         button.layer.cornerRadius = 25
-        button.setTitle("Settings", for: .normal)
+        button.setTitle("Delete all data", for: .normal)
         return button
     }()
     
     private let buttonExit:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .homeViewColor
+        button.backgroundColor = .tabBarColor
         button.tintColor = .orange
         
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -52,7 +59,7 @@ final class HomeView: UIView {
     
     private let customButton:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .homeViewColor
+        button.backgroundColor = .tabBarColor
         button.tintColor = .orange
         
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -61,7 +68,7 @@ final class HomeView: UIView {
         button.layer.shadowRadius = 5
         
         button.layer.cornerRadius = 25
-        button.setTitle("Custom View", for: .normal)
+        button.setTitle("Custom table view", for: .normal)
         return button
     }()
     
@@ -69,7 +76,7 @@ final class HomeView: UIView {
         customButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             customButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 170),
-            customButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -560),
+            customButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -600),
             customButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             customButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80)
         ])
@@ -79,7 +86,7 @@ final class HomeView: UIView {
         buttonExit.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             buttonExit.topAnchor.constraint(equalTo: self.topAnchor, constant: 320),
-            buttonExit.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -400),
+            buttonExit.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -440),
             buttonExit.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             buttonExit.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80)
         ])
@@ -89,7 +96,7 @@ final class HomeView: UIView {
         settingButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             settingButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 470),
-            settingButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -250),
+            settingButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -290),
             settingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             settingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80)
         ])
@@ -110,37 +117,39 @@ final class HomeView: UIView {
         NSLayoutConstraint.activate([
             generalLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 60),
             generalLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -685),
-            generalLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 120),
-            generalLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70)
+            generalLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            generalLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80)
         ])
     }
     
     func addSomeViews() {
         self.addSubview(imageView)
-        self.addSubview(generalLabel)
-        self.addSubview(buttonExit)
-        self.addSubview(settingButton)
         self.addSubview(customButton)
-    }
-    
-    func addButtonAction() {
-        buttonExit.addTarget(self, action: #selector(actionExitButton), for: .touchUpInside)
+        self.addSubview(generalLabel)
+        self.addSubview(settingButton)
+        self.addSubview(buttonExit)
+
     }
     
     func costraintsForAllViews() {
         constraintForImageView()
-        constraintForGeneralButton()
         constraintForCustomButton()
+        constraintForGeneralButton()
         constraintForSettingButton()
         constraintForExitButton()
     }
     
+    func addButtonAction() {
+        settingButton.addTarget(self, action: #selector(actionSettingButton), for: .touchUpInside)
+    }
+    
+    //MARK: - init func
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSomeViews()
         costraintsForAllViews()
         addButtonAction()
-      
     }
     
     required init?(coder: NSCoder) {
@@ -148,8 +157,8 @@ final class HomeView: UIView {
     }
 }
 
-extension HomeView {
-    @objc func actionExitButton() {
-        onActionForExitButton?()
+extension SettingView {
+    @objc func actionSettingButton() {
+        onActionForDeleteButton?()
     }
 }

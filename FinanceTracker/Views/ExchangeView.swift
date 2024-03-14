@@ -2,10 +2,11 @@
 import Foundation
 import UIKit
 
-class ExchangeView: UIView {
-    
+final class ExchangeView: UIView {
+    //MARK: - clouser for button
     var onButtonAction:(() -> Void)?
     
+    //MARK: - create UI elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "newStocks")
@@ -14,12 +15,11 @@ class ExchangeView: UIView {
     
     private let toolBar: UIToolbar = {
         let toolbar = UIToolbar()
-//        toolbar.backgroundColor = UIColor.tabBarColor
         toolbar.barTintColor = .mainWhite
         return toolbar
     }()
     
-    let toolbarLabel: UILabel = {
+    private let toolbarLabel: UILabel = {
         let label = UILabel()
         label.text = "Exchange rate"
         label.textColor = .black
@@ -28,21 +28,21 @@ class ExchangeView: UIView {
         return label
     }()
     
-    let buttonPerson: UIButton = {
+    private let buttonPerson: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "house.fill"), for: .normal)
         return button
     }()
     
-    let buttonBook: UIButton = {
+    private let buttonBook: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "info.bubble.fill"), for: .normal)
         return button
     }()
-
     
     var collectionView: UICollectionView
     
+    //MARK: - create constraints for UI elements
     func constraintForPersonButton() {
         buttonPerson.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -121,7 +121,6 @@ class ExchangeView: UIView {
         buttonPerson.addTarget(self, action: #selector(personButtonAction), for: .touchUpInside)
     }
         
-    //MARK: - init func
     override init(frame: CGRect) {
         let layout = ExchangeView.setupLayout()
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -137,6 +136,7 @@ class ExchangeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - layout for collectionView
     private static func setupLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 350, height: 350)
@@ -146,8 +146,8 @@ class ExchangeView: UIView {
     }
 }
 
+//MARK: - button action
 extension ExchangeView {
-    
     @objc func personButtonAction(){
         onButtonAction?()
     }

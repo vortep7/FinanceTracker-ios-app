@@ -1,9 +1,3 @@
-//
-//  RegistrViewController.swift
-//  FinanceTracker
-//
-//  Created by Андрей Петров on 08.03.2024.
-//
 
 import UIKit
 import Firebase

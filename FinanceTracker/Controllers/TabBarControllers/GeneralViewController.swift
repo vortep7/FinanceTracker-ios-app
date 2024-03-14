@@ -58,7 +58,7 @@ extension GeneralViewController {
         } else {
             do {
                 try CoreDataManager.shared.createReport(id, amount, reason, self.uid!, currentDate)
-                let t = CoreDataManager.shared.fetchAllReport()
+//                let t = CoreDataManager.shared.fetchAllReport()
 
                 generalView.firstTextField.text = ""
                 generalView.secondtTextField.text = ""

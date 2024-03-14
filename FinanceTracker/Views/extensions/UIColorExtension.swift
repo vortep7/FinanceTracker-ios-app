@@ -45,4 +45,8 @@ extension UIColor {
     static var tableViewColorNew: UIColor {
         #colorLiteral(red: 0.5190203669, green: 0.6000000238, blue: 0.5286347008, alpha: 0.8699037666)
     }
+    
+    static var priceColor: UIColor {
+        #colorLiteral(red: 0, green: 0.4273612545, blue: 0.4483309659, alpha: 0.9679221855)
+    }
 }

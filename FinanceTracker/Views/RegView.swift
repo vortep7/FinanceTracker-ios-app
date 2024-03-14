@@ -8,10 +8,13 @@
 import UIKit
 
 final class RegView: UIView {
-    
+    //MARK: - clousers
+
     var onFirstActionForBotton: (() -> Void)?
     var onSecondActionForBotton: (() -> Void)?
-
+    
+    
+    //MARK: - creating UI elements
     let firstTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -21,25 +24,24 @@ final class RegView: UIView {
         textField.layer.shadowOpacity = 0.4
         textField.layer.shadowRadius = 4
         textField.layer.cornerRadius = 15
-        textField.placeholder = "Email"
+        textField.placeholder = " Email"
         return textField
     }()
     
     let alert: UIAlertController = {
-        
         let alert = UIAlertController(title: "Error", message: "Invalid username or password", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
         alert.addAction(okAction)
         return alert
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "secondKaif")
         return imageView
     }()
     
-    let buttonFirst:UIButton = {
+    private let buttonFirst:UIButton = {
         let button = UIButton()
         button.backgroundColor = .brown
         button.tintColor = .orange
@@ -48,7 +50,7 @@ final class RegView: UIView {
         return button
     }()
     
-    let buttonSecond:UIButton = {
+    private let buttonSecond:UIButton = {
         let button = UIButton()
         button.backgroundColor = .brown
         button.tintColor = .orange
@@ -57,7 +59,7 @@ final class RegView: UIView {
         return button
     }()
     
-    let firstLabel:UILabel = {
+    private let firstLabel:UILabel = {
         let label = UILabel()
         label.text = "Registration"
         label.textColor = .white
@@ -65,7 +67,7 @@ final class RegView: UIView {
         return label
     }()
     
-    let infoLabel:UILabel = {
+    private let infoLabel:UILabel = {
         let label = UILabel()
         label.text = "Developed by Vortep"
         label.textColor = .white
@@ -83,10 +85,11 @@ final class RegView: UIView {
         textField.layer.shadowRadius = 4
         textField.textColor = .black
         textField.isSecureTextEntry = true
-        textField.placeholder = "Password"
+        textField.placeholder = " Password"
         return textField
     }()
     
+    //MARK: - consctraints for UI
     func constraintForFirstButton() {
         buttonFirst.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -100,7 +103,6 @@ final class RegView: UIView {
     func constraintForFInfoLabel() {
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-//            infoLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 460),
             infoLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
             infoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             infoLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
@@ -182,6 +184,22 @@ final class RegView: UIView {
         buttonSecond.addTarget(self, action: #selector(actionSecondButton), for: .touchUpInside)
     }
     
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addViews()
+        createConstraints()
+        createTasksForButton()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//MARK: - action for buttons and change text
+extension RegView {
     @objc func actionFirstButton() {
         onFirstActionForBotton?()
     }
@@ -202,17 +220,5 @@ final class RegView: UIView {
         case true: buttonFirst.setTitle("Do you already have an account?", for: .normal)
         case false: buttonFirst.setTitle("Register", for: .normal)
         }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        addViews()
-        createConstraints()
-        createTasksForButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
