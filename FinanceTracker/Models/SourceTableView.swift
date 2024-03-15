@@ -9,30 +9,20 @@ struct ReportCell {
 
 struct SourceTableView {
     
-    static let shared = SourceTableView()
-    private init() {}
+    let dataManager: MyDataManager
+//    static let shared = SourceTableView()
+//    private init() {}
+    
+    init(dataManager: MyDataManager) {
+        self.dataManager = dataManager
+    }
     
     func createDataArray(_ uid: String) -> [Request] {
         do {
-            let array = try CoreDataManager.shared.newR(for: uid)
+            let array = try dataManager.newRequest(for: uid)
             return array
         } catch {
             return []
         }
     }
-//    
-//    func createNewDataArray(_ uid: String) -> [Request?] {
-//        do {
-//            let element = try CoreDataManager.shared.fetchReport(uid)
-//            
-//            let array = [element]
-//            print(array)
-//            return array
-//        } catch {
-//            print("error1")
-//            return []
-//        }
-//    }
-//    
-    
 }

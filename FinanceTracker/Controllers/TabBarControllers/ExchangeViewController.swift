@@ -56,7 +56,8 @@ extension ExchangeViewController: UICollectionViewDataSource {
 
 extension ExchangeViewController {
     func fetchData() {
-        ConfigStocks.shared.requestForCollection { myArray in
+        let networkManager = NetworkManager.shared
+        ConfigStocks(networkManager: networkManager).requestForCollection { myArray in
             if let myArray = myArray{
                 if self.count == 1 {
                     self.source = myArray

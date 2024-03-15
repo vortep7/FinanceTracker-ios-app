@@ -1,10 +1,15 @@
-
 import UIKit
 import CoreData
 
+protocol MyDataManager {
+    func fetchAllReport() -> [Request]
+    func createReport(_ id: Int16,_ amount: Int64,_ reason: String,_ uid: String,_ date:Date) throws
+    func fetchReports(for uid: String) -> [Request]
+    func newRequest(for uid: String) throws -> [Request] 
+}
 
 //CRUD pattern
-public class CoreDataManager {
+public class CoreDataManager: MyDataManager {
     static let shared = CoreDataManager()
     private init() {}
     
@@ -35,15 +40,7 @@ public class CoreDataManager {
         }
     }
     
-//    public func fetchReport(_ uid: String) throws  -> Request? {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Request")
-//        do {
-//            let reports = try? context.fetch(fetchRequest) as? [Request]
-//            return reports?.first(where: {$0.uid == uid})
-//        }
-//    }
-    
-    public func newR(for uid: String) throws -> [Request] {
+    public func newRequest(for uid: String) throws -> [Request] {
         let fetchRequest: NSFetchRequest<Request> = Request.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uid == %@", uid)
         

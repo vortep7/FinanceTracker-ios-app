@@ -6,6 +6,7 @@ class StatisticViewController: UIViewController {
     var uid: String?
     var source = [Request?]()
     var kind: String?
+    let dataManager = CoreDataManager.shared
     
     override func viewDidLoad() {
         statisticView.tableView.dataSource = self
@@ -16,7 +17,7 @@ class StatisticViewController: UIViewController {
         
         statisticView.tableView.register(TableViewCell.self, forCellReuseIdentifier: "\(TableViewCell.self)")
         uid = Auth.auth().currentUser?.uid
-        source = SourceTableView.shared.createDataArray(uid ?? "")
+        source = SourceTableView(dataManager: dataManager).createDataArray(uid ?? "")
         
     }
     
@@ -26,7 +27,7 @@ class StatisticViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         uid = Auth.auth().currentUser?.uid
-        source = SourceTableView.shared.createDataArray(uid ?? "")
+        source = SourceTableView(dataManager: dataManager).createDataArray(uid ?? "")
         super.viewWillAppear(animated)
         var fullSum:Int64 = 0
         
@@ -75,7 +76,7 @@ class StatisticViewController: UIViewController {
 extension StatisticViewController {
     @objc func actionForButtonReload() {
         uid = Auth.auth().currentUser?.uid
-        source = SourceTableView.shared.createDataArray(uid ?? "")
+        source = SourceTableView(dataManager: dataManager).createDataArray(uid ?? "")
         statisticView.tableView.reloadData()
         statisticView.animationForButton()
     }

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol NetworkService {
+protocol NetworkService {    
     func fetchDataExchange(completion: @escaping (Result<ExchangeRates,Error>) -> Void)
     func fetchDataMoney(completion: @escaping (Result<MoneyModel,Error>) -> Void)
 }

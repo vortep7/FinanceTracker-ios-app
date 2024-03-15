@@ -9,18 +9,23 @@ struct Stocks {
 }
 
 class ConfigStocks {
-    static let shared = ConfigStocks()
     private var exchangeStorage = [String:Double]()
     private var exchangeStorageDate: String?
     private var moneyTitleStorage: MoneyModel?
     
     var myArray = [Stocks]()
-    
     var firstFlag = false
     var secondFlag = false
+    
+    let networkManager:NetworkService
+    
+    //MARK: - DI pattern
+    init(networkManager:NetworkService) {
+        self.networkManager = networkManager
+    }
 
     func requestForCollection(completion: @escaping ([Stocks]?) -> Void) {
-        NetworkManager.shared.fetchDataExchange {result in
+        networkManager.fetchDataExchange {result in
             switch result {
             case .success(let data):
                 self.exchangeStorage = data.eur
@@ -35,7 +40,7 @@ class ConfigStocks {
             }
         }
         
-        NetworkManager.shared.fetchDataMoney {result in
+        networkManager.fetchDataMoney {result in
             switch result {
             case .success(let data):
                 self.moneyTitleStorage = data
