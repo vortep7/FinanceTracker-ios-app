@@ -5,11 +5,14 @@ protocol MyDataManager {
     func fetchAllReport() -> [Request]
     func createReport(_ id: Int16,_ amount: Int64,_ reason: String,_ uid: String,_ date:Date) throws
     func fetchReports(for uid: String) -> [Request]
-    func newRequest(for uid: String) throws -> [Request] 
+    func newRequest(for uid: String) throws -> [Request]
+    func deleteReport(with uid: String) throws
 }
 
 //CRUD pattern
 public class CoreDataManager: MyDataManager {
+    
+    //MARK: - singlton
     static let shared = CoreDataManager()
     private init() {}
     
@@ -22,7 +25,9 @@ public class CoreDataManager: MyDataManager {
     }
     
     public func createReport(_ id: Int16,_ amount: Int64,_ reason: String,_ uid: String,_ date:Date) throws {
-        guard let entityReportDescription = NSEntityDescription.entity(forEntityName: "Request", in: context) else { throw DataErrors.entityCreationFailed}
+        guard let entityReportDescription = NSEntityDescription.entity(forEntityName: "Request", in: context) 
+        else { throw DataErrors.entityCreationFailed}
+        
         let report = Request(entity: entityReportDescription, insertInto: context)
         report.id = id
         report.amount = amount

@@ -2,11 +2,13 @@ import UIKit
 import FirebaseAuth
 
 class StatisticViewController: UIViewController {
+    
     var statisticView: StatisticView { return self.view as! StatisticView}
     var uid: String?
     var source = [Request?]()
     var kind: String?
     let dataManager = CoreDataManager.shared
+
     
     override func viewDidLoad() {
         statisticView.tableView.dataSource = self
@@ -55,7 +57,6 @@ class StatisticViewController: UIViewController {
             }
         }
         
-        
         statisticView.tableView.reloadData()
         statisticView.amountLabel.text = "Full price: \(fullSum)"
         statisticView.sumsLabel.text = """
@@ -73,22 +74,7 @@ class StatisticViewController: UIViewController {
     }
 }
 
-extension StatisticViewController {
-    @objc func actionForButtonReload() {
-        uid = Auth.auth().currentUser?.uid
-        source = SourceTableView(dataManager: dataManager).createDataArray(uid ?? "")
-        statisticView.tableView.reloadData()
-        statisticView.animationForButton()
-    }
-    
-    @objc func actionForButtonPerson() {
-        let nextController = SettingViewController()
-        present(nextController, animated: true)
-    }
-    
-    
-}
-
+//MARK: - table delegate/data source
 extension StatisticViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
@@ -97,13 +83,11 @@ extension StatisticViewController: UITableViewDelegate {
 
 extension StatisticViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(source.count)
         return source.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(TableViewCell.self)", for: indexPath) as! TableViewCell
-        print(source)
         let reversedArr = Array(source.reversed())
         let element = reversedArr[indexPath.row]
                 
@@ -141,6 +125,20 @@ extension StatisticViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - reload nutton action
+extension StatisticViewController {
+    @objc func actionForButtonReload() {
+        uid = Auth.auth().currentUser?.uid
+        source = SourceTableView(dataManager: dataManager).createDataArray(uid ?? "")
+        statisticView.tableView.reloadData()
+        statisticView.animationForButton()
+    }
+    
+    @objc func actionForButtonPerson() {
+        let nextController = SettingViewController()
+        present(nextController, animated: true)
+    }
+}
 
 enum KindOfPurchase: String {
     case food = "Food"

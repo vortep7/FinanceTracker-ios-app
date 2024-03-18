@@ -7,18 +7,17 @@
 
 import UIKit
 
-class SettingView: UIView {
+final class SettingView: UIView {
     
     var onActionForDeleteButton: (() -> Void)?
+    var onExitButonAction: (() -> Void)?
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "blackFirst")
         return imageView
     }()
-    
-    var onActionForExitButton: (() -> Void)?
-    
+        
     private let generalLabel: UILabel = {
         let label = UILabel()
         label.text = "Table view setting"
@@ -141,6 +140,7 @@ class SettingView: UIView {
     
     func addButtonAction() {
         settingButton.addTarget(self, action: #selector(actionSettingButton), for: .touchUpInside)
+        buttonExit.addTarget(self, action: #selector(actionExitButton), for: .touchUpInside)
     }
     
     //MARK: - init func
@@ -160,5 +160,9 @@ class SettingView: UIView {
 extension SettingView {
     @objc func actionSettingButton() {
         onActionForDeleteButton?()
+    }
+    
+    @objc func actionExitButton() {
+        onExitButonAction?()
     }
 }

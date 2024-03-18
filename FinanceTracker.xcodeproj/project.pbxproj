@@ -52,6 +52,9 @@
 		175BE0652B9F3FB60082166B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BE0642B9F3FB60082166B /* HomeView.swift */; };
 		178006982BA18D8B00CD53EC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178006972BA18D8B00CD53EC /* SettingViewController.swift */; };
 		1780069A2BA18DA200CD53EC /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178006992BA18DA200CD53EC /* SettingView.swift */; };
+		17BD8CF82BA8C1FD0053E433 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD8CF72BA8C1FD0053E433 /* InfoView.swift */; };
+		17BD8CFB2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD8CFA2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 */; };
+		17BD8CFE2BA8CEBA0053E433 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,9 @@
 		175BE0642B9F3FB60082166B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		178006972BA18D8B00CD53EC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		178006992BA18DA200CD53EC /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		17BD8CF72BA8C1FD0053E433 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		17BD8CFA2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Evgeniy Ponasenkov - I Love Paris.mp3"; sourceTree = "<group>"; };
+		17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,7 @@
 				175BE0642B9F3FB60082166B /* HomeView.swift */,
 				17482AEC2BA0BEBB0071F62D /* CollectionViewCell.swift */,
 				178006992BA18DA200CD53EC /* SettingView.swift */,
+				17BD8CF72BA8C1FD0053E433 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 		171D7C302B98A98700C50B32 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				17BD8CFC2BA8CEA10053E433 /* AudioService */,
 				17468AB12B9B4B99002713C5 /* AuthService */,
 				17468A8B2B99ED88002713C5 /* StorageManager */,
 				171D7C312B98A98E00C50B32 /* NetworkService */,
@@ -336,6 +344,7 @@
 		17468A9B2B9A44FC002713C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17BD8CF92BA8C3C60053E433 /* Sounds */,
 				17468ABD2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf */,
 				17468ABB2B9C7A5C002713C5 /* abosanova.ttf */,
 			);
@@ -358,6 +367,22 @@
 				171D7BFF2B9881CA00C50B32 /* FinanceTracker.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		17BD8CF92BA8C3C60053E433 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				17BD8CFA2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		17BD8CFC2BA8CEA10053E433 /* AudioService */ = {
+			isa = PBXGroup;
+			children = (
+				17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */,
+			);
+			path = AudioService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +500,7 @@
 				171D7C062B9881CC00C50B32 /* LaunchScreen.storyboard in Resources */,
 				171D7C032B9881CC00C50B32 /* Assets.xcassets in Resources */,
 				17468AA52B9B2722002713C5 /* GoogleService-Info.plist in Resources */,
+				17BD8CFB2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 in Resources */,
 				17468ABE2B9C7AF1002713C5 /* Cinzel-VariableFont_wght.ttf in Resources */,
 				17468ABC2B9C7A5D002713C5 /* abosanova.ttf in Resources */,
 			);
@@ -507,6 +533,7 @@
 				175BE0652B9F3FB60082166B /* HomeView.swift in Sources */,
 				171D7BF72B9881CA00C50B32 /* AppDelegate.swift in Sources */,
 				178006982BA18D8B00CD53EC /* SettingViewController.swift in Sources */,
+				17BD8CFE2BA8CEBA0053E433 /* AudioManager.swift in Sources */,
 				171D7C352B98A9F600C50B32 /* NetworkManager.swift in Sources */,
 				171275752B9CCB05008E2BA9 /* StatisticViewController.swift in Sources */,
 				171D7BF92B9881CA00C50B32 /* SceneDelegate.swift in Sources */,
@@ -514,6 +541,7 @@
 				175BE0612B9E2D8B0082166B /* ExchangeCell.swift in Sources */,
 				17468AB32B9B4BAB002713C5 /* AuthManager.swift in Sources */,
 				17468A962B9A19A2002713C5 /* ExchangeModel.swift in Sources */,
+				17BD8CF82BA8C1FD0053E433 /* InfoView.swift in Sources */,
 				1712757C2B9CD3CF008E2BA9 /* ExchangeView.swift in Sources */,
 				171275782B9CCF3A008E2BA9 /* UIColorExtension.swift in Sources */,
 				175BE0632B9F3CB10082166B /* HomeVIewController.swift in Sources */,

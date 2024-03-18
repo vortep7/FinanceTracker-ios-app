@@ -1,5 +1,4 @@
-
-
+import Firebase
 import UIKit
 
 class SettingViewController: UIViewController {
@@ -9,7 +8,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         settingView.onActionForDeleteButton = {[weak self] in self?.actionForButtonSetting()}
-
+        settingView.onExitButonAction = {[weak self] in self?.actionForButtonExit()}
     }
     
     override func loadView() {
@@ -22,4 +21,13 @@ extension SettingViewController {
     @objc func actionForButtonSetting() {
         CoreDataManager.shared.deleteAllReport()
     }
+    
+    @objc func actionForButtonExit() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("error")
+        }
+    }
+    
 }

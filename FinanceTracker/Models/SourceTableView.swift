@@ -8,11 +8,9 @@ struct ReportCell {
 }
 
 struct SourceTableView {
-    
     let dataManager: MyDataManager
-//    static let shared = SourceTableView()
-//    private init() {}
-    
+
+    //MARK: - DI pattern
     init(dataManager: MyDataManager) {
         self.dataManager = dataManager
     }
