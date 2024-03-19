@@ -1,9 +1,3 @@
-//
-//  InfoView.swift
-//  FinanceTracker
-//
-//  Created by Андрей Петров on 18.03.2024.
-//
 
 import UIKit
 
@@ -15,7 +9,7 @@ class InfoView: UIView {
     //MARK: - create UI elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "cute")
+        imageView.image = UIImage(named: "nicee")
         return imageView
     }()
     
@@ -25,12 +19,6 @@ class InfoView: UIView {
         return button
     }()
     
-    private let buttonSecond:UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "pause.circle"), for: .normal)
-        
-        return button
-    }()
     
     func constraintForImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +44,6 @@ class InfoView: UIView {
     
     func createTasksForButton() {
         buttonFirst.addTarget(self, action: #selector(actionFirstButton), for: .touchUpInside)
-        buttonSecond.addTarget(self, action: #selector(actionSecondButton), for: .touchUpInside)
     }
     
     func addSomeViews() {

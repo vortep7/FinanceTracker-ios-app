@@ -1,20 +1,26 @@
 import AVFoundation
 import Foundation
 
-class AudioManager {
+protocol AudioService {
+    func createUrlSound(completion: @escaping (AVAudioPlayer) -> Void) throws
+}
+
+class AudioManager:AudioService {
     static var shared = AudioManager()
     private init() {}
     
-    func createUrlSound( audioPlayer: inout AVAudioPlayer?) {
+    func createUrlSound(completion: @escaping (AVAudioPlayer) -> Void) throws{
         if let soundURL = Bundle.main.url(forResource: SoundUrl.firstSound.rawValue, withExtension: Format.mp3.rawValue) {
             do {
-                audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
-                audioPlayer!.prepareToPlay()
+                let audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+                audioPlayer.prepareToPlay()
+                completion(audioPlayer)
             } catch {
-                print("\(error.localizedDescription)")
+                throw AudioErrors.badData
             }
         } else {
-            print("error")
+            throw AudioErrors.invalidUrl
         }
     }
 }
+

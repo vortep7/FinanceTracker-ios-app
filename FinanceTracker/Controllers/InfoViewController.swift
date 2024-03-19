@@ -10,12 +10,15 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        infoView.onFirstActionButon = {[weak self] in self!.playMusic()}
-        infoView.onSecondActionButon = {[weak self] in self!.stopMusic()}
-        
-        
+        infoView.onFirstActionButon = {[weak self] in self!.playOrStopMusic()}
         configSound()
-        AudioManager.shared.createUrlSound(audioPlayer: &(audioPlayer))
+        
+        do {
+            try AudioManager.shared.createUrlSound { result in
+                self.audioPlayer = result
+            }
+        } catch {
+        }
     }
     
     override func loadView() {
@@ -24,15 +27,12 @@ class InfoViewController: UIViewController {
 }
 
 extension InfoViewController {
-    @objc func playMusic() {
+    @objc func playOrStopMusic() {
         if audioPlayer!.isPlaying {
             audioPlayer?.pause()
         } else {
             audioPlayer?.play()
         }
-    }
-    
-    @objc func stopMusic() {
     }
     
     func configSound() {

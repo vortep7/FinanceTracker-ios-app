@@ -55,6 +55,7 @@
 		17BD8CF82BA8C1FD0053E433 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD8CF72BA8C1FD0053E433 /* InfoView.swift */; };
 		17BD8CFB2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD8CFA2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 */; };
 		17BD8CFE2BA8CEBA0053E433 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */; };
+		17BD8D002BA95CA20053E433 /* AudioErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD8CFF2BA95CA20053E433 /* AudioErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		17BD8CF72BA8C1FD0053E433 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		17BD8CFA2BA8C3EC0053E433 /* Evgeniy Ponasenkov - I Love Paris.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Evgeniy Ponasenkov - I Love Paris.mp3"; sourceTree = "<group>"; };
 		17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		17BD8CFF2BA95CA20053E433 /* AudioErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				17BD8CFD2BA8CEBA0053E433 /* AudioManager.swift */,
+				17BD8CFF2BA95CA20053E433 /* AudioErrors.swift */,
 			);
 			path = AudioService;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				1780069A2BA18DA200CD53EC /* SettingView.swift in Sources */,
 				17482AEB2BA0839D0071F62D /* Request+CoreDataProperties.swift in Sources */,
 				17482AF12BA0C3A50071F62D /* SourceTableView.swift in Sources */,
+				17BD8D002BA95CA20053E433 /* AudioErrors.swift in Sources */,
 				171275732B9CC597008E2BA9 /* ExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
